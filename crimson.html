@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimsonDev - Jasa Joki & Pembuatan Website Premium | Full-Stack & AI</title>
+    <meta name="description" content="Jasa joki website tugas kuliah, skripsi, landing page UMKM, hingga web apps bertenaga Full-Stack Coding & AI Terkini (Claude, ChatGPT, Gemini, DeepSeek). Terima beres, bebas bug, garansi revisi sampai ACC!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        crimson: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            400: '#fb7185',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        },
+                        obsidian: {
+                            950: '#050507',
+                            900: '#0a0a0f',
+                            850: '#0f0f17',
+                            800: '#14141f',
+                            700: '#1c1c2b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050507; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #dc2626, #7f1d1d);
+            border-radius: 4px;
+        }
+
+        body {
+            background-color: #050507;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Studio Perspective Grid */
+        .bg-tech-grid {
+            background-image: 
+                linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* 3D Card Flip System for Small Kotak-Kotak (Coding ⇄ AI) */
+        .flip-card-3d {
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+        }
+
+        .flip-card-inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Antigravity Floating Bobbing Animations */
+        @keyframes antigravityFloatA {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
+        }
+        @keyframes antigravityFloatB {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(9px) rotate(-2deg); }
+        }
+        @keyframes antigravityFloatC {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-9px) rotate(-1.5deg); }
+        }
+
+        .float-a { animation: antigravityFloatA 4.8s ease-in-out infinite; }
+        .float-b { animation: antigravityFloatB 5.4s ease-in-out infinite 0.7s; }
+        .float-c { animation: antigravityFloatC 5.1s ease-in-out infinite 1.4s; }
+
+        /* Floating Hero Icon Item Transition (Scatter -> Converge into Phone) */
+        .hero-icon-item {
+            transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, box-shadow 0.4s ease;
+            will-change: transform;
+        }
+
+        .hero-icon-item:hover {
+            box-shadow: 0 0 35px rgba(220, 38, 38, 0.55), 0 0 10px rgba(239, 68, 68, 0.7);
+            z-index: 40 !important;
+        }
+
+        .phone-mockup-shell {
+            transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
+            will-change: transform;
+        }
+
+        .hero-side-copy {
+            transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Glowing Crimson Effects */
+        .crimson-glow {
+            box-shadow: 0 0 35px -5px rgba(220, 38, 38, 0.45);
+        }
+        .crimson-border-glow {
+            border: 1px solid rgba(239, 68, 68, 0.28);
+            background: linear-gradient(160deg, rgba(20, 20, 30, 0.92) 0%, rgba(10, 10, 15, 0.98) 100%);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .crimson-border-glow:hover {
+            border-color: rgba(239, 68, 68, 0.75);
+            box-shadow: 0 15px 40px -10px rgba(220, 38, 38, 0.38);
+        }
+
+        /* Bento Step Pulse (Card 1) */
+        @keyframes stepPulse {
+            0%, 100% { border-color: rgba(239, 68, 68, 0.2); background-color: rgba(20, 20, 28, 0.7); }
+            50% { border-color: rgba(239, 68, 68, 0.95); background-color: rgba(127, 29, 29, 0.38); transform: translateX(6px); }
+        }
+        .step-anim-1 { animation: stepPulse 4.5s infinite 0s; }
+        .step-anim-2 { animation: stepPulse 4.5s infinite 1.5s; }
+        .step-anim-3 { animation: stepPulse 4.5s infinite 3s; }
+
+        /* Vertical Ticker inside Bento Card 4 */
+        @keyframes verticalMarquee {
+            0% { transform: translateY(0%); }
+            100% { transform: translateY(-50%); }
+        }
+        .animate-vertical-marquee {
+            animation: verticalMarquee 12s linear infinite;
+        }
+        .animate-vertical-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Avatar Radial Ring Expansion (Video 0:09 - 0:10) */
+        .avatar-node {
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            will-change: transform;
+        }
+
+        /* Emerging Service Badges from behind Phone (Video 0:11 - 0:12) */
+        .service-wing-left {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            will-change: transform;
+        }
+        .service-wing-right {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            will-change: transform;
+        }
+
+        /* Animated Giant Crimson Ribbon SVG Stroke (Video 0:19 - 0:20) */
+        @keyframes ribbonFlow {
+            0% { stroke-dashoffset: 1600; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -1600; }
+        }
+        .ribbon-path-animated {
+            stroke-dasharray: 1600;
+            animation: ribbonFlow 14s ease-in-out infinite;
+        }
+
+        /* Reveal on Scroll Base */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-crimson-600 selection:text-white bg-tech-grid">
+
+    <!-- ==================== STICKY NAVBAR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/80 backdrop-blur-xl border-b border-crimson-900/30 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson-500 to-crimson-900 flex items-center justify-center text-white font-bold text-lg crimson-glow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">JokiWeb<span class="text-crimson-500">.id</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest text-gray-400 -mt-1">Full-Stack &amp; AI Supercharged</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu (5 Required Sections) -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-obsidian-900/90 p-1.5 rounded-full border border-white/10">
+                <a href="#home" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium bg-crimson-600 text-white transition-all">Home</a>
+                <a href="#tentang" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Tentang Kami</a>
+                <a href="#layanan" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Layanan</a>
+                <a href="#blog" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Blog</a>
+                <a href="#kontak" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Kontak</a>
+            </nav>
+
+            <!-- Pill CTA Button (Like Video Top Right) -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#kontak" onclick="prefillOrder('Konsultasi Express Coding & AI')" class="px-5 py-2.5 rounded-full font-semibold text-xs lg:text-sm text-white bg-gradient-to-r from-crimson-600 via-crimson-700 to-crimson-950 hover:from-crimson-500 hover:to-crimson-800 border border-crimson-400/40 crimson-glow transition-all flex items-center gap-2">
+                    <span>Pesan Sekarang</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-btn" aria-label="Menu" class="md:hidden p-2.5 rounded-xl bg-obsidian-800 text-gray-200 border border-crimson-800/50">
+                <i id="mobile-icon" class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-obsidian-900/95 backdrop-blur-xl border-b border-crimson-900/40 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-crimson-600/20 border border-crimson-500/30">Home</a>
+            <a href="#tentang" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Tentang Kami</a>
+            <a href="#layanan" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Layanan</a>
+            <a href="#blog" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Blog</a>
+            <a href="#kontak" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Kontak</a>
+            <a href="#kontak" class="mobile-nav-link block w-full text-center py-3 mt-2 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-crimson-600 to-crimson-900 crimson-glow">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <!-- ==================== 1. HOME: SCROLL-DRIVEN CONVERGENCE HERO (Video 0:00 - 0:04) ==================== -->
+    <section id="home" class="relative pt-24 pb-16 lg:pt-28 lg:pb-24 overflow-hidden transition-colors duration-700" style="min-height: 105vh;">
+        <!-- Dynamic Background Glow that intensifies when converged -->
+        <div id="hero-dynamic-bg" class="absolute inset-0 pointer-events-none transition-opacity duration-700 opacity-30"
+             style="background: radial-gradient(circle at 50% 60%, rgba(220, 38, 38, 0.45) 0%, rgba(127, 29, 29, 0.2) 45%, rgba(5, 5, 7, 1) 85%);">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
+            
+            <!-- Clean Header Status Badge (Automatic & Free from Manual Buttons) -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-900/80 border border-crimson-500/30 text-xs text-gray-300 mb-6 shadow-lg backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-crimson-500 animate-ping"></span>
+                <span class="text-gray-300 font-medium">Jasa Pembuatan Website &amp; Coding Tugas Mahasiswa</span>
+                <span class="text-crimson-400 font-semibold">• 100% Bergaransi ACC</span>
+            </div>
+
+            <!-- Hero Headline -->
+            <div id="hero-headline-box" class="text-center max-w-3xl mx-auto transition-all duration-700">
+                <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-white">
+                    Bereskan Tugas Coding <br class="hidden sm:inline" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-red-800">&amp; Website Impianmu</span>
+                </h1>
+                <p class="text-gray-400 text-sm sm:text-base mt-4 max-w-xl mx-auto leading-relaxed">
+                    Jasa joki pembuatan website tugas kuliah, skripsi, landing page UMKM, hingga web apps. Dikerjakan dengan <strong class="text-gray-200">Full-Stack Code</strong> &amp; dioptimasi <strong class="text-crimson-400">AI Mutakhir</strong> (Claude, ChatGPT, Gemini, DeepSeek). Terima beres, bebas bug, garansi revisi sampai ACC!
+                </p>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <a href="#layanan" class="px-7 py-3 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-crimson-600 to-crimson-900 hover:from-crimson-500 hover:to-crimson-700 border border-crimson-400/40 crimson-glow transition-all">
+                        Mulai Order Sekarang
+                    </a>
+                    <a href="#kontak" onclick="prefillOrder('Konsultasi Modul Kuliah')" class="px-6 py-3 rounded-full font-semibold text-sm text-gray-300 hover:text-white bg-obsidian-900/90 hover:bg-obsidian-800 border border-white/10 transition-all">
+                        Konsultasi Modul Gratis
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Stage: 6 Core Floating Kotak-Kotak (Auto 3D Flip Coding ⇄ AI) + Center Phone Mockup + Side Texts -->
+            <div class="relative w-full max-w-6xl mt-6 sm:mt-10 flex items-center justify-center min-h-[480px] sm:min-h-[540px]">
+                
+                <!-- Left Side Text (Appears automatically when user scrolls down and phone converges - Video 0:03) -->
+                <div id="hero-left-copy" class="hero-side-copy hidden lg:block w-1/3 pr-8 opacity-0 -translate-x-10 pointer-events-none">
+                    <span class="text-xs font-bold uppercase tracking-widest text-crimson-400">Partner Coding Terbaik</span>
+                    <h2 class="font-display font-bold text-3xl xl:text-4xl text-white mt-2 leading-tight">
+                        Gerbang Menuju Nilai A+ &amp; Bisnis Digital
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+                        Tidak perlu begadang semalaman karena error merah di terminal. Tim developer kami siap mengeksekusi website Anda dengan cepat, bersih, dan bergaransi bimbingan sampai paham.
+                    </p>
+                    <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-crimson-400">
+                        <i class="fa-solid fa-bolt"></i> Selesai Kilat dalam 24-72 Jam
+                    </div>
+                </div>
+
+                <!-- 6 Core Floating Kotak-Kotak (Automatically cycle flip between Coding and AI logos every 4 seconds) -->
+                <!-- Symmetrically framing the smartphone: 3 on the Left, 3 on the Right -->
+                <div id="floating-icons-stage" class="absolute inset-0 pointer-events-none flex items-center justify-center z-20">
+                    
+                    <!-- Box 1: HTML5 ⇄ Claude 3.5 Sonnet (Top Left) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-a w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="-260" data-scatter-y="-140" data-scatter-r="-12"
+                         data-phone-x="-52" data-phone-y="-70" data-phone-r="-8" data-phone-scale="0.76"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: HTML5 ⇄ Claude AI">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: HTML5 -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-crimson-700/90 to-obsidian-950 border border-orange-500/50 flex flex-col items-center justify-center text-white crimson-glow">
+                                <i class="fa-brands fa-html5 text-2xl text-orange-400"></i>
+                                <span class="text-[9px] font-bold mt-0.5">HTML5</span>
+                            </div>
+                            <!-- Back: Claude 3.5 -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-amber-700/90 to-obsidian-950 border border-amber-400/60 flex flex-col items-center justify-center text-amber-200" style="box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.5);">
+                                <svg class="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2a1 1 0 0 1 1 1v2.5a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm6.36 3.64a1 1 0 0 1 0 1.41l-1.77 1.77a1 1 0 1 1-1.41-1.41l1.77-1.77a1 1 0 0 1 1.41 0zM22 12a1 1 0 0 1-1 1h-2.5a1 1 0 0 1 0-2H21a1 1 0 0 1 1 1zm-3.64 6.36a1 1 0 0 1-1.41 0l-1.77-1.77a1 1 0 1 1 1.41-1.41l1.77 1.77a1 1 0 0 1 0 1.41zM12 22a1 1 0 0 1-1-1v-2.5a1 1 0 0 1 2 0V21a1 1 0 0 1-1 1zm-6.36-3.64a1 1 0 0 1 0-1.41l1.77-1.77a1 1 0 1 1 1.41 1.41l-1.77 1.77a1 1 0 0 1-1.41 0zM2 12a1 1 0 0 1 1-1h2.5a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm3.64-6.36a1 1 0 0 1 1.41 0l1.77 1.77a1 1 0 0 1-1.41 1.41L5.64 7.05a1 1 0 0 1 0-1.41zM12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">Claude</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: JavaScript & TypeScript ⇄ Google Gemini (Mid Left) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-c w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="-310" data-scatter-y="10" data-scatter-r="10"
+                         data-phone-x="-52" data-phone-y="5" data-phone-r="6" data-phone-scale="0.76"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: JavaScript ⇄ Gemini AI">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: JavaScript -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-obsidian-800 to-black border border-yellow-500/50 flex flex-col items-center justify-center text-yellow-400">
+                                <i class="fa-brands fa-js text-2xl text-yellow-400"></i>
+                                <span class="text-[9px] font-bold mt-0.5 text-gray-200">JS / TS</span>
+                            </div>
+                            <!-- Back: Google Gemini -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-blue-700/90 to-purple-950 border border-sky-400/60 flex flex-col items-center justify-center text-sky-200" style="box-shadow: 0 0 25px -4px rgba(56, 189, 248, 0.5);">
+                                <svg class="w-6 h-6 text-sky-300" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C12 7.52 7.52 12 2 12C7.52 12 12 16.48 12 22C12 16.48 16.48 12 22 12C16.48 12 12 7.52 12 2Z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">Gemini</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 3: Python ⇄ Cursor AI (Bottom Left) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-b w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="-220" data-scatter-y="150" data-scatter-r="-16"
+                         data-phone-x="-48" data-phone-y="75" data-phone-r="-10" data-phone-scale="0.74"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: Python ⇄ Cursor AI">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: Python -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-obsidian-800 to-crimson-950 border border-yellow-500/40 flex flex-col items-center justify-center text-white">
+                                <i class="fa-brands fa-python text-2xl text-yellow-400"></i>
+                                <span class="text-[9px] font-bold mt-0.5">Python</span>
+                            </div>
+                            <!-- Back: Cursor AI -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-gray-900 to-cyan-950 border border-cyan-400/60 flex flex-col items-center justify-center text-white" style="box-shadow: 0 0 25px -4px rgba(34, 211, 238, 0.45);">
+                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M13.64 21.97a1 1 0 0 1-1.85-.45l.9-6.3-5.5 3.17a1 1 0 0 1-1.48-1.07l2.8-14a1 1 0 0 1 1.76-.44l11.2 14a1 1 0 0 1-.95 1.62l-6.88-.53z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">Cursor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 4: CSS3 & Tailwind ⇄ OpenAI ChatGPT (Top Right) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-b w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="260" data-scatter-y="-140" data-scatter-r="14"
+                         data-phone-x="52" data-phone-y="-70" data-phone-r="8" data-phone-scale="0.76"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: CSS3 ⇄ ChatGPT">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: CSS3 / Tailwind -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-obsidian-800 to-black border border-cyan-500/40 flex flex-col items-center justify-center text-cyan-400">
+                                <i class="fa-brands fa-css3-alt text-2xl text-cyan-400"></i>
+                                <span class="text-[9px] font-bold mt-0.5 text-gray-200">CSS/Tailwind</span>
+                            </div>
+                            <!-- Back: ChatGPT -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-emerald-800/90 to-obsidian-950 border border-emerald-400/60 flex flex-col items-center justify-center text-emerald-200" style="box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.5);">
+                                <svg class="w-6 h-6 text-emerald-300" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21.5 9.8a5.5 5.5 0 0 0-.48-4.43 5.6 5.6 0 0 0-4.08-2.73 5.57 5.57 0 0 0-4.7 1.45A5.5 5.5 0 0 0 4.7 5.7a5.6 5.6 0 0 0-2.4 3.74 5.56 5.56 0 0 0 .9 4.8 5.5 5.5 0 0 0 .48 4.43 5.6 5.6 0 0 0 4.08 2.73 5.58 5.58 0 0 0 4.7-1.45 5.5 5.5 0 0 0 7.54-1.61 5.6 5.6 0 0 0 2.4-3.74 5.57 5.57 0 0 0-.9-4.8zm-7.6 10.32a4.13 4.13 0 0 1-2.65-.24l.13-.08 4.4-2.54a.73.73 0 0 0 .37-.64v-6.2l1.86 1.08a.07.07 0 0 1 .04.05v5.13a4.16 4.16 0 0 1-4.15 4.44zm-9.3-3.66a4.11 4.11 0 0 1-.36-2.63l.14.08 4.4 2.54a.73.73 0 0 0 .74 0l5.37-3.1v2.15a.07.07 0 0 1-.03.06l-4.44 2.57a4.16 4.16 0 0 1-5.82-1.67zm-1.12-9.45a4.13 4.13 0 0 1 2.29-1.32v5.24a.73.73 0 0 0 .37.64l5.37 3.1-1.86 1.07a.07.07 0 0 1-.07 0l-4.44-2.56a4.16 4.16 0 0 1-1.66-6.17zm11.77 2.14-5.37-3.1 1.86-1.07a.07.07 0 0 1 .07 0l4.44 2.56a4.16 4.16 0 0 1 1.66 6.17 4.13 4.13 0 0 1-2.29 1.32v-5.24a.73.73 0 0 0-.37-.64zm3.92 5.06a4.11 4.11 0 0 1 .36 2.63l-.14-.08-4.4-2.54a.73.73 0 0 0-.74 0l-5.37 3.1v-2.15a.07.07 0 0 1 .03-.06l4.44-2.57a4.16 4.16 0 0 1 5.82 1.67zm-8.87-1.74 2.4-1.39 2.4 1.39v2.77l-2.4 1.39-2.4-1.39z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">ChatGPT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 5: React.js ⇄ DeepSeek R1 (Mid Right) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-a w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="310" data-scatter-y="10" data-scatter-r="-10"
+                         data-phone-x="52" data-phone-y="5" data-phone-r="-6" data-phone-scale="0.76"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: React ⇄ DeepSeek AI">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: React -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-obsidian-800 to-black border border-cyan-400/50 flex flex-col items-center justify-center text-cyan-400">
+                                <i class="fa-brands fa-react text-2xl text-cyan-400"></i>
+                                <span class="text-[9px] font-bold mt-0.5 text-gray-200">React.js</span>
+                            </div>
+                            <!-- Back: DeepSeek -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-cyan-800/90 to-blue-950 border border-cyan-400/60 flex flex-col items-center justify-center text-cyan-200" style="box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.5);">
+                                <svg class="w-6 h-6 text-cyan-300" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 3C7.03 3 3 7.03 3 12c0 3.2 1.68 6.02 4.2 7.6.28.18.64.04.75-.26l.85-2.26c.09-.24-.01-.52-.23-.65-1.57-.96-2.57-2.67-2.57-4.63 0-3.31 2.69-6 6-6s6 2.69 6 6c0 1.96-1 3.67-2.57 4.63-.22.13-.32.41-.23.65l.85 2.26c.11.3.47.44.75.26 2.52-1.58 4.2-4.4 4.2-7.6 0-4.97-4.03-9-9-9zm0 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">DeepSeek</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 6: Laravel 11 ⇄ GitHub Copilot (Bottom Right) -->
+                    <div class="hero-icon-item flip-card-3d pointer-events-auto float-c w-14 h-14 sm:w-16 sm:h-16 cursor-pointer"
+                         data-scatter-x="220" data-scatter-y="150" data-scatter-r="16"
+                         data-phone-x="48" data-phone-y="75" data-phone-r="10" data-phone-scale="0.74"
+                         onclick="flipSingleCard(this)" title="Klik untuk membalik: Laravel ⇄ Copilot">
+                        <div class="flip-card-inner rounded-2xl w-full h-full shadow-2xl">
+                            <!-- Front: Laravel -->
+                            <div class="flip-card-front rounded-2xl bg-gradient-to-br from-crimson-600 to-obsidian-950 border border-crimson-400/50 flex flex-col items-center justify-center text-white crimson-glow">
+                                <i class="fa-brands fa-laravel text-2xl text-white"></i>
+                                <span class="text-[9px] font-bold mt-0.5">Laravel</span>
+                            </div>
+                            <!-- Back: GitHub Copilot -->
+                            <div class="flip-card-back rounded-2xl bg-gradient-to-br from-indigo-700/90 to-purple-950 border border-indigo-400/60 flex flex-col items-center justify-center text-indigo-200" style="box-shadow: 0 0 25px -4px rgba(129, 140, 248, 0.5);">
+                                <svg class="w-6 h-6 text-indigo-300" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12c0 2.85 1.2 5.42 3.12 7.24.4.38.98.54 1.5.38l2.1-.64c.3-.09.58-.28.78-.54l1.2-1.56c.4-.52 1.2-.52 1.6 0l1.2 1.56c.2.26.48.45.78.54l2.1.64c.52.16 1.1 0 1.5-.38C20.8 17.42 22 14.85 22 12c0-5.52-4.48-10-10-10zm-3 8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+                                </svg>
+                                <span class="text-[9px] font-bold mt-0.5">Copilot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Center Smartphone Mockup (Rises up on scroll, receives the tech/AI boxes inside) -->
+                <div id="hero-phone" class="phone-mockup-shell relative z-10 w-[275px] sm:w-[300px] h-[485px] sm:h-[515px] rounded-[44px] p-3 bg-gradient-to-b from-crimson-500/40 via-obsidian-800 to-black border-[3px] border-crimson-500/50 shadow-2xl flex flex-col justify-between">
+                    <!-- Inner Screen -->
+                    <div id="phone-inner-screen" class="w-full h-full rounded-[34px] bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-crimson-950/70 border border-white/10 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden transition-colors duration-500">
+                        
+                        <!-- Top Notch / Dynamic Island -->
+                        <div class="flex items-center justify-between text-[11px] text-gray-400">
+                            <span class="font-semibold text-white">9:41</span>
+                            <div class="w-20 px-2 h-4.5 rounded-full bg-black border border-crimson-500/30 flex items-center justify-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-crimson-500 animate-ping"></span>
+                                <span class="text-[8px] font-mono text-crimson-300 font-bold">READY</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-[10px]">
+                                <i class="fa-solid fa-signal"></i>
+                                <i class="fa-solid fa-battery-full text-crimson-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- App Header inside Phone -->
+                        <div class="text-center mt-1">
+                            <span class="text-xs font-display font-bold text-white flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-bolt text-crimson-500"></i> JokiWeb.id Dev Engine
+                            </span>
+                        </div>
+
+                        <!-- Middle Drop Zone where floating icons land on scroll -->
+                        <div class="my-auto py-4 flex flex-col items-center justify-center text-center relative z-10">
+                            <div class="w-40 h-40 rounded-full bg-crimson-600/15 blur-2xl absolute"></div>
+                            
+                            <!-- State A: Default View before convergence -->
+                            <div id="phone-default-view" class="transition-opacity duration-500 space-y-2">
+                                <div class="w-12 h-12 rounded-2xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 mx-auto text-xl crimson-glow">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <p id="phone-hint-text" class="text-[11px] text-gray-300 font-semibold uppercase tracking-wider">
+                                    Full-Stack &amp; AI Stack
+                                </p>
+                                <p class="text-[10px] text-gray-400 max-w-[190px]">
+                                    Scroll ke bawah untuk melihat modul coding terserap ke dalam sistem
+                                </p>
+                            </div>
+
+                            <!-- State B: Live Terminal View (Visible when converged on scroll) -->
+                            <div id="phone-converged-view" class="hidden transition-opacity duration-500 w-full text-left font-mono text-[9px] bg-black/85 p-3 rounded-xl border border-crimson-500/30 space-y-1 text-gray-300">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-1 text-[8px] text-gray-400">
+                                    <span class="text-crimson-400 font-bold">&gt; JokiWeb Dev Terminal</span>
+                                    <span class="text-green-400">STATUS: ACC</span>
+                                </div>
+                                <p class="text-gray-300">&gt; stack: <span class="text-orange-400">Laravel 11</span> + <span class="text-cyan-400">React</span></p>
+                                <p class="text-gray-300">&gt; ai-engine: <span class="text-amber-400">Claude 3.5</span> &amp; <span class="text-cyan-300">DeepSeek</span></p>
+                                <p class="text-green-400">&gt; result: 100% Bebas Bug &amp; Siap Sidang</p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Action Card inside Phone -->
+                        <div class="relative z-30 bg-obsidian-900/95 backdrop-blur-md border border-crimson-500/30 rounded-2xl p-3.5 text-center space-y-2">
+                            <div class="text-[11px] text-crimson-400 font-semibold flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>100% Source Code &amp; Bimbingan</span>
+                            </div>
+                            <div class="font-display font-bold text-sm text-white leading-snug">Order Proyek Website</div>
+                            <div class="w-full bg-obsidian-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-crimson-500 via-red-500 to-green-400 w-4/5 h-full rounded-full"></div>
+                            </div>
+                            <a href="#kontak" onclick="prefillOrder('Order dari Mockup Hero')" class="block w-full py-2 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 transition-all">
+                                Konsultasi Gratis Sekarang
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Side Text (Appears automatically when Phone Converges on scroll - Video 0:03) -->
+                <div id="hero-right-copy" class="hero-side-copy hidden lg:block w-1/3 pl-8 opacity-0 translate-x-10 pointer-events-none">
+                    <div class="p-5 rounded-2xl crimson-border-glow space-y-2.5">
+                        <div class="flex items-center gap-2 text-crimson-400 text-xs font-bold">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Garansi Pasti Jalan &amp; Revisi</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Pengerjaan website tidak hanya menghasilkan tampilan mewah, tapi juga <strong>source code rapi</strong>, bebas bug, database normalisasi, serta <strong>bimbingan instalasi</strong> via Zoom atau AnyDesk sampai jalan di laptop Anda.
+                        </p>
+                        <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                            <span>Sidang Dosen?</span>
+                            <span class="text-white font-bold">100% Siap Jawab</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 2. TENTANG KAMI: BENTO GRID "HOW IT WORKS" (Video 0:05 - 0:08) ==================== -->
+    <section id="tentang" class="relative py-20 lg:py-28 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950 border-t border-crimson-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Heading -->
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Tentang Kami &amp; Cara Kerja</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Bagaimana <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-red-600">JokiWeb.id</span> Bekerja
+                </h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">
+                    Transparan, terstruktur, dan dikerjakan langsung oleh tim Software Engineer berpengalaman di bidang akademik maupun industri modern.
+                </p>
+            </div>
+
+            <!-- Bento Grid Container (Exact Layout from Video 0:05 - 0:08) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                
+                <!-- Card 1: Alur Pemesanan Cepat (Top Left - 4 cols) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Alur Cepat</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-1">3 Langkah Terima Beres</h3>
+                        <p class="text-xs text-gray-400 mt-1">Sangat cocok untuk Anda yang dikejar deadline mepet.</p>
+                    </div>
+
+                    <div class="space-y-2.5 mt-6">
+                        <div class="step-anim-1 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-600 text-white flex items-center justify-center font-bold text-xs">1</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Kirim Modul / Brief Proyek</div>
+                                <div class="text-[11px] text-gray-400">Via WhatsApp &amp; sepakati harga</div>
+                            </div>
+                        </div>
+                        <div class="step-anim-2 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-700 text-white flex items-center justify-center font-bold text-xs">2</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Proses Coding &amp; Live Demo</div>
+                                <div class="text-[11px] text-gray-400">Pantau progres secara langsung</div>
+                            </div>
+                        </div>
+                        <div class="step-anim-3 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-800 text-white flex items-center justify-center font-bold text-xs">3</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Serah Terima &amp; Bimbingan</div>
+                                <div class="text-[11px] text-gray-400">Gratis pasang di laptop sampai jalan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tim Developer & Komunitas Klien (Top Middle - 4 cols) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div class="flex items-center -space-x-3 pt-2">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-crimson-600 to-red-400 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">AR</div>
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-obsidian-700 to-crimson-700 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">DN</div>
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-800 to-crimson-500 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">FK</div>
+                        <div class="w-12 h-12 rounded-full bg-crimson-950 border-2 border-crimson-500/50 flex items-center justify-center font-bold text-crimson-300 text-xs">+15 Dev</div>
+                    </div>
+
+                    <div class="my-6">
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-[11px] font-semibold mb-2">
+                            <i class="fa-solid fa-user-shield"></i> Privasi Klien 100% Rahasia
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white">Tim Spesialis Akademik &amp; UMKM</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Bukan sekadar pembuat kode, kami adalah mentor teknis Anda. Setiap baris kode diberi komentar penjelasan agar Anda siap menghadapi sidang dosen atau presentasi klien.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/10 text-center">
+                        <div class="p-2 rounded-xl bg-obsidian-950/70">
+                            <div class="font-display font-bold text-lg text-crimson-400">520+</div>
+                            <div class="text-[10px] text-gray-400">Project Tuntas</div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-obsidian-950/70">
+                            <div class="font-display font-bold text-lg text-crimson-400">99.4%</div>
+                            <div class="text-[10px] text-gray-400">Lulus Sidang / Puas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Tall Right Tech Stack Matrix (Clean, Authentic Logos - No AI Slop) -->
+                <div class="md:col-span-4 md:row-span-2 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Teknologi Pilihan</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-crimson-950 border border-crimson-500/30 text-crimson-400 text-[10px] font-semibold">Clean Code</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mt-1">Bebas Request Bahasa &amp; Framework</h3>
+                        <p class="text-xs text-gray-400 mt-1">Pilih teknologi sesuai silabus kampus atau kebutuhan proyek bisnis Anda.</p>
+                    </div>
+
+                    <!-- 3x4 Clean App Icons Grid -->
+                    <div class="grid grid-cols-3 gap-2.5 my-5">
+                        
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-crimson-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-laravel text-2xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Laravel 11</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-cyan-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-react text-2xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">React.js</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-vuejs text-2xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Vue.js</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-indigo-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-php text-2xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">PHP 8</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-green-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-node-js text-2xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Node.js</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-yellow-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-python text-2xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Python</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-blue-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-js text-2xl text-yellow-300 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">TypeScript</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-orange-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-fire text-2xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">CI 4</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-sky-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-wind text-2xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Tailwind</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-crimson-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-database text-2xl text-crimson-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">MySQL</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-pink-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-figma text-2xl text-pink-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Figma UI</span>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-obsidian-950 border border-white/5 hover:border-purple-500/50 flex flex-col items-center justify-center gap-1 group transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-server text-2xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Deploy VPS</span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-xs text-gray-400 border-t border-white/10 pt-3">
+                        Dikerjakan dengan arsitektur bersih (*clean code*), mudah dipelajari, dan siap dipertanggungjawabkan saat sidang akademik.
+                    </p>
+                </div>
+
+                <!-- Card 4: Scrolling Feature Guarantee Ticker (Middle Left - 8 cols wide like Video 0:06) -->
+                <div class="md:col-span-8 rounded-3xl p-6 crimson-border-glow grid grid-cols-1 sm:grid-cols-2 gap-6 items-center reveal-up">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Standar Kualitas</span>
+                        <h3 class="font-display font-bold text-2xl text-white mt-1">Fitur Lengkap Sesuai Permintaanmu</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Setiap proyek dilengkapi dokumentasi terstruktur, skema relasi database (ERD), dan antarmuka responsif di ponsel, tablet, maupun desktop.
+                        </p>
+                    </div>
+
+                    <!-- Vertical Scrolling Ticker Box -->
+                    <div class="h-40 overflow-hidden relative rounded-2xl bg-obsidian-950 border border-crimson-500/20 p-3">
+                        <div class="animate-vertical-marquee space-y-2.5">
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-check-circle text-crimson-500"></i> Clean Code &amp; Komentar Lengkap di Tiap Baris
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-bolt text-yellow-400"></i> Layanan Express Selesai Kilat 24 Jam
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-diagram-project text-crimson-400"></i> Bonus File SQL, ERD, dan Flowchart Sistem
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-headset text-green-400"></i> Bimbingan Remote AnyDesk Sampai Lulus Sidang
+                            </div>
+                            <!-- Duplicate for seamless loop -->
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-check-circle text-crimson-500"></i> Clean Code &amp; Komentar Lengkap di Tiap Baris
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-bolt text-yellow-400"></i> Layanan Express Selesai Kilat 24 Jam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Bottom Left Remote Setup Preview (4 cols - Video 0:08) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <h3 class="font-display font-bold text-xl text-white">Gratis Setup &amp; Deployment</h3>
+                        <p class="text-xs text-gray-400 mt-1">Dijalankan di localhost (XAMPP/Laragon) atau dideploy ke hosting cPanel/VPS.</p>
+                    </div>
+                    <div class="mt-5 p-4 rounded-2xl bg-gradient-to-b from-crimson-950/60 to-obsidian-950 border border-crimson-500/30 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600 flex items-center justify-center text-white">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-white">AnyDesk / Zoom Live</div>
+                                <div class="text-[10px] text-crimson-300">Dibantu pasang sampai 100% jalan</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Card 6: Interactive Topic Tag Cloud (Bottom Right - 8 cols like "Choose Only Topics" in Video 0:08) -->
+                <div class="md:col-span-8 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div class="flex flex-wrap gap-2 mb-4" id="topic-pills-container">
+                        <button onclick="toggleTopicPill(this, 'Web Tugas Kuliah')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Web Tugas Kuliah</button>
+                        <button onclick="toggleTopicPill(this, 'Skripsi SPK (SAW/AHP/TOPSIS)')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Skripsi SPK (SAW/AHP)</button>
+                        <button onclick="toggleTopicPill(this, 'Landing Page UMKM')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Landing Page UMKM</button>
+                        <button onclick="toggleTopicPill(this, 'Toko Online Payment Gateway')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Toko Online Midtrans</button>
+                        <button onclick="toggleTopicPill(this, 'Company Profile Instansi')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Company Profile</button>
+                        <button onclick="toggleTopicPill(this, 'Sistem Kasir / POS')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Sistem Kasir / POS</button>
+                        <button onclick="toggleTopicPill(this, 'Web AI Chatbot & Generator')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Web AI Chatbot / Generator</button>
+                        <button onclick="toggleTopicPill(this, 'Fix Error & Tambah Fitur')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Fix Bug &amp; Error</button>
+                        <button onclick="toggleTopicPill(this, 'Slicing UI Figma ke Code')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Slicing Figma ke Code</button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-3 border-t border-white/10">
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white">Pilih Topik Proyek Sesuai Kebutuhanmu</h4>
+                            <p class="text-xs text-gray-400">Klik tag di atas untuk memilih topik dan langsung konsultasikan dengan tim kami.</p>
+                        </div>
+                        <a href="#kontak" class="shrink-0 px-4 py-2 rounded-xl bg-crimson-600/20 border border-crimson-500/40 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs font-bold transition-all">
+                            Konsultasikan Topik →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. LAYANAN: EXPANDING AVATAR RING + PHONE WINGS (Video 0:09 - 0:12) ==================== -->
+    <section id="layanan" class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-obsidian-950 via-crimson-950/25 to-obsidian-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- PART A: Expanding Avatar Circle ("Join Our Community" in Video 0:09 - 0:10) -->
+            <!-- Automatically expands into orbit ring when scrolled into viewport -->
+            <div id="avatar-ring-section" class="relative min-h-[380px] sm:min-h-[430px] flex flex-col items-center justify-center text-center mb-20 rounded-3xl bg-gradient-to-b from-crimson-950/30 via-obsidian-900/80 to-obsidian-950 border border-crimson-500/30 p-6 overflow-hidden">
+                
+                <!-- Floating Avatar Nodes (Clustered in center initially -> Automatically expand outward on scroll) -->
+                <div id="avatar-ring-stage" class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-crimson-500 to-crimson-900 border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-270" data-ry="-120">
+                        <span>Mhs IT</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-obsidian-700 to-crimson-700 border-2 border-crimson-400 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="270" data-ry="-115">
+                        <span>UMKM</span>
+                    </div>
+                    <div class="avatar-node w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-gradient-to-br from-red-600 to-black border-2 border-white/70 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-320" data-ry="25">
+                        <span>Skripsi</span>
+                    </div>
+                    <div class="avatar-node w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-gradient-to-br from-crimson-700 to-obsidian-900 border-2 border-crimson-300 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="320" data-ry="30">
+                        <span>Startup</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-crimson-500 to-black border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-200" data-ry="135">
+                        <span>SMK/TI</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-red-800 to-crimson-500 border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="210" data-ry="135">
+                        <span>Toko</span>
+                    </div>
+                </div>
+
+                <!-- Center Text inside Ring -->
+                <div class="relative z-10 max-w-lg mx-auto space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-crimson-600/20 border border-crimson-500/40 text-crimson-300 text-xs font-semibold">
+                        Dipercaya 500+ Mahasiswa &amp; Pebisnis
+                    </span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-white">
+                        Gabung Bersama Klien Sukses Kami
+                    </h2>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Dari tugas koding semalam jadi hingga sistem informasi korporat &amp; integrasi AI. Konsultasikan ide atau modul tugas Anda sekarang juga.
+                    </p>
+                    <div class="pt-2 flex items-center justify-center">
+                        <a href="#kontak" onclick="prefillOrder('Gabung Order Prioritas')" class="px-7 py-3 rounded-full bg-white text-obsidian-950 hover:bg-crimson-500 hover:text-white font-bold text-xs sm:text-sm transition-all shadow-lg">
+                            Mulai Proyek Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PART B: Phone Center + Sliding Feature Badges / Wings ("Networking Opportunities" in Video 0:11 - 0:12) -->
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Katalog Layanan &amp; Paket Harga</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Layanan Unggulan <span class="text-crimson-500">Siap Pakai</span>
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Klik salah satu kartu sayap di samping ponsel untuk melihat detail spesifikasi dan memesan langsung.</p>
+            </div>
+
+            <div id="phone-services-showcase" class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-center max-w-6xl mx-auto">
+                
+                <!-- Left Wing: 3 Sliding Service Cards (Slide out automatically on scroll) -->
+                <div class="lg:col-span-4 space-y-4 z-20">
+                    <!-- Service 1 -->
+                    <div onclick="openServiceDetail(0)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Website Tugas &amp; Praktikum</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 150.000 • 1-3 Hari</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div onclick="openServiceDetail(1)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Web Skripsi &amp; Tugas Akhir</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 750.000 • Full Bimbingan</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div onclick="openServiceDetail(2)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Landing Page UMKM &amp; Iklan</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 350.000 • High Conversion</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Phone Mockup (Like "Web3 Summit" QR Phone in Video 0:12) -->
+                <div class="lg:col-span-4 flex justify-center z-10 my-4 lg:my-0">
+                    <div class="w-[260px] sm:w-[280px] rounded-[40px] p-3 bg-gradient-to-b from-crimson-500/40 via-obsidian-800 to-black border-2 border-crimson-500/50 crimson-glow">
+                        <div class="rounded-[30px] bg-obsidian-950 p-5 border border-white/10 space-y-4">
+                            <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                <span>9:41</span>
+                                <span class="px-2 py-0.5 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 font-semibold">KATALOG PRO</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-gradient-to-br from-crimson-900/50 to-obsidian-900 border border-crimson-500/30">
+                                <div class="text-xs font-bold text-white">Pilih Paket JokiWeb</div>
+                                <div class="text-[11px] text-gray-300 mt-1"><i class="fa-solid fa-clock text-crimson-400 mr-1"></i>Pengerjaan Express 24/7</div>
+                                <div class="text-[11px] text-gray-300"><i class="fa-solid fa-shield-halved text-crimson-400 mr-1"></i>Garansi Revisi Sampai ACC</div>
+                            </div>
+
+                            <!-- Interactive QR / Code Visual Box -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-br from-crimson-600 to-crimson-900 text-white text-center space-y-2 shadow-inner">
+                                <i class="fa-solid fa-qrcode text-5xl"></i>
+                                <div class="text-xs font-bold tracking-wider uppercase">Pilih Paket di Samping</div>
+                                <p class="text-[10px] text-crimson-100">Klik paket di kiri/kanan untuk detail fitur lengkap</p>
+                            </div>
+
+                            <a href="#kontak" onclick="prefillOrder('Paket Custom Pilihan')" class="block w-full py-2.5 rounded-xl bg-white text-obsidian-950 hover:bg-crimson-500 hover:text-white font-bold text-xs text-center transition-all">
+                                Order Cepat via WA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Wing: 3 Sliding Service Cards (Slide out automatically on scroll) -->
+                <div class="lg:col-span-4 space-y-4 z-20">
+                    <!-- Service 4 -->
+                    <div onclick="openServiceDetail(3)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Website Toko Online / E-Commerce</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 850.000 • Payment &amp; Ongkir</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div onclick="openServiceDetail(4)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Web Apps &amp; Sistem Custom</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Harga Nego • Multi-Role &amp; Database</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div onclick="openServiceDetail(5)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Jasa Fix Bug &amp; Slicing Figma</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 100.000 • Selesai Kilat</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. BLOG: ALTERNATING SPLIT SHOWCASE (Video 0:13 - 0:18) ==================== -->
+    <section id="blog" class="relative py-20 lg:py-28 bg-obsidian-950 border-t border-crimson-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Blog &amp; Wawasan Teknis</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Tips Lulus Sidang &amp; <span class="text-crimson-500">Strategi Website Modern</span>
+                </h2>
+            </div>
+
+            <!-- Blog Row 1: Text Left, Large Rounded Visual Card Right (Like "Study Wherever You Want" in Video 0:13) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Panduan Mahasiswa • 4 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Rahasia Presentasi Web Skripsi Agar Langsung Dapat Nilai A+
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Menggunakan jasa pembuatan website untuk membantu tugas akhir sangatlah wajar, asalkan Anda memahami alur CRUD, struktur tabel database (ERD), dan letak fungsi utama saat diuji dosen.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(0)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                        <a href="#kontak" onclick="prefillOrder('Konsultasi Web Skripsi')" class="px-5 py-3 rounded-2xl bg-obsidian-900 hover:bg-obsidian-800 text-gray-200 border border-white/10 text-xs sm:text-sm font-semibold transition-all">
+                            Tanya Paket Skripsi
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div onclick="openBlogReader(0)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-br from-crimson-800 via-crimson-950 to-obsidian-900 border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="absolute -right-12 -top-12 w-52 h-52 rounded-full bg-crimson-500/20 blur-2xl group-hover:scale-125 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-mono border border-crimson-500/30">skripsi-controller.php</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="my-6 p-4 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs text-gray-300 space-y-1 z-10">
+                            <p><span class="text-crimson-400">public function</span> <span class="text-white">sidangSkripsi</span>() {</p>
+                            <p class="pl-4">return <span class="text-green-400">'Lulus Sidang Tanpa Revisi Berat!'</span>;</p>
+                            <p>}</p>
+                        </div>
+                        <div class="z-10 flex items-center justify-between text-xs text-gray-300">
+                            <span>Dilengkapi Video Penjelasan Baris Kode</span>
+                            <span class="font-bold text-white">100% Siap Sidang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Row 2: Large Rounded Visual Card Left, Text Right (Like "Popular Live Streams" in Video 0:15) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div onclick="openBlogReader(1)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-bl from-crimson-700/80 via-obsidian-900 to-black border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-semibold border border-crimson-500/30">Perbandingan Stack 2026</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 my-6 z-10">
+                            <div class="p-4 rounded-2xl bg-black/60 border border-crimson-500/30 text-center">
+                                <i class="fa-brands fa-laravel text-3xl text-red-500 mb-1"></i>
+                                <div class="text-xs font-bold text-white">Laravel</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/60 border border-cyan-500/30 text-center">
+                                <i class="fa-brands fa-react text-3xl text-cyan-400 mb-1"></i>
+                                <div class="text-xs font-bold text-white">React.js</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/60 border border-emerald-500/30 text-center">
+                                <i class="fa-brands fa-python text-3xl text-yellow-400 mb-1"></i>
+                                <div class="text-xs font-bold text-white">Python</div>
+                            </div>
+                        </div>
+                        <div class="z-10 text-xs text-gray-300">
+                            Panduan memilih teknologi terbaik sesuai silabus &amp; skala aplikasi.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Arsitektur Web • 5 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Kapan Harus Pakai Laravel, React, atau Python Backend?
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Jangan salah pilih teknologi! Ketahui kapan Anda harus menggunakan sistem berbasis PHP Laravel yang tangguh untuk database relasional, React + Tailwind untuk antarmuka interaktif, atau Python untuk pemrosesan data cerdas.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(1)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Row 3: Text Left, Visual Card Right (Like "Customize Your Learning" in Video 0:17) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Bisnis &amp; Konversi • 3 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Desain Landing Page Dark Mode &amp; Gradasi Merah yang Menaikkan Omzet
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Pelajari bagaimana psikologi warna hitam obsidian dan aksen merah menyala serta penempatan tombol WhatsApp yang presisi dapat meningkatkan penjualan produk UMKM hingga berkali-kali lipat.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(2)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div onclick="openBlogReader(2)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-tr from-obsidian-900 via-crimson-950 to-crimson-700 border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-semibold border border-crimson-500/30">UI/UX Conversion</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="my-6 p-5 rounded-2xl bg-black/65 border border-crimson-500/30 space-y-3 z-10">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Kecepatan Loading</span>
+                                <span class="text-green-400 font-bold">99/100 Google Speed</span>
+                            </div>
+                            <div class="w-full bg-obsidian-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-crimson-500 to-green-400 w-[96%] h-full"></div>
+                            </div>
+                        </div>
+                        <div class="z-10 text-xs text-gray-200 font-medium">
+                            Klik untuk membaca studi kasus konversi halaman web UMKM &amp; akademik.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 5. KONTAK & BENTO FOOTER WITH RIBBON SVG (Video 0:19 - 0:20) ==================== -->
+    <section id="kontak" class="relative py-20 lg:py-28 overflow-hidden bg-obsidian-950 border-t border-crimson-900/30">
+        
+        <!-- GIANT GLOWING CRIMSON RIBBON SVG WEAVING BEHIND CARDS (Exact replication of Video 0:19 - 0:20) -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-85" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="crimsonRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7f1d1d" />
+                    <stop offset="50%" stop-color="#ef4444" />
+                    <stop offset="100%" stop-color="#991b1b" />
+                </linearGradient>
+                <filter id="ribbonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="12" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <!-- Background Static Thick Ribbon -->
+            <path d="M-100 580 C 220 580, 260 120, 560 140 C 860 160, 740 600, 1080 580 C 1320 560, 1380 180, 1600 160"
+                  stroke="url(#crimsonRibbonGrad)" stroke-width="58" stroke-linecap="round" opacity="0.28" />
+            <!-- Animated Glowing Core Ribbon -->
+            <path class="ribbon-path-animated"
+                  d="M-100 580 C 220 580, 260 120, 560 140 C 860 160, 740 600, 1080 580 C 1320 560, 1380 180, 1600 160"
+                  stroke="url(#crimsonRibbonGrad)" stroke-width="36" stroke-linecap="round" filter="url(#ribbonGlow)" />
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Top Brand Strip above Footer Bento -->
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-crimson-600 flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="font-display font-bold text-2xl text-white">JokiWeb<span class="text-crimson-500">.id</span></span>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400">Layanan pembuatan website &amp; solusi tugas coding terpercaya 24 jam di seluruh Indonesia.</p>
+            </div>
+
+            <!-- 3-Column Bento Contact Layout (Replicating Video 0:19 - 0:20) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                
+                <!-- Bento Card 1: Order / Consultation Form (5 cols) -->
+                <div class="lg:col-span-5 rounded-[34px] p-7 sm:p-8 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Mulai Konsultasi</span>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mt-1 mb-4">
+                            Pesan Jasa Joki &amp; Website Sekarang
+                        </h3>
+
+                        <form id="joki-order-form" onsubmit="submitOrderForm(event)" class="space-y-3.5">
+                            <div>
+                                <input type="text" id="order-name" required placeholder="Nama Anda / Panggilan *"
+                                       class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-gray-500">
+                            </div>
+                            <div>
+                                <select id="order-service" required
+                                        class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white">
+                                    <option value="Website Tugas Kuliah / Praktikum">Website Tugas Kuliah / Praktikum</option>
+                                    <option value="Website Skripsi / Tugas Akhir">Website Skripsi / Tugas Akhir</option>
+                                    <option value="Landing Page UMKM / Promosi">Landing Page UMKM / Promosi</option>
+                                    <option value="Website Toko Online / E-Commerce">Website Toko Online / E-Commerce</option>
+                                    <option value="Custom Sistem Informasi / Web App">Custom Sistem Informasi / Web App</option>
+                                    <option value="Web AI Chatbot / Generator">Web AI Chatbot / Generator</option>
+                                    <option value="Fix Bug / Slicing Figma">Fix Bug / Slicing Figma</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea id="order-notes" rows="3" required placeholder="Tulis singkat detail tugas/website & deadline Anda..."
+                                          class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-gray-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-crimson-600 via-crimson-700 to-crimson-900 hover:from-crimson-500 hover:to-crimson-700 crimson-glow transition-all flex items-center justify-center gap-2">
+                                <span>Kirim &amp; Hubungi WhatsApp</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="pt-5 mt-5 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                        <span>© 2026 JokiWeb.id</span>
+                        <span class="text-crimson-400 font-semibold">Respon Cepat &lt; 5 Menit</span>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2: Contacts Details Card (5 cols - Center Card in Video 0:19) -->
+                <div class="lg:col-span-5 rounded-[34px] p-7 sm:p-8 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Saluran Resmi</span>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">Kontak Kami</h3>
+                        
+                        <div class="space-y-3 pt-2 text-sm text-gray-300">
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5 flex items-center justify-between">
+                                <div>
+                                    <div class="text-[11px] text-gray-400">Email Pengiriman Modul / Brief</div>
+                                    <div class="font-semibold text-white">admin@jokiweb.id</div>
+                                </div>
+                                <button onclick="copyText('admin@jokiweb.id', 'Email')" class="px-3 py-1 rounded-lg bg-crimson-600/20 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs transition-all">Salin</button>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5 flex items-center justify-between">
+                                <div>
+                                    <div class="text-[11px] text-gray-400">WhatsApp Fast Response (24/7)</div>
+                                    <div class="font-semibold text-white">+62 812-3456-7890</div>
+                                </div>
+                                <button onclick="copyText('+6281234567890', 'Nomor WhatsApp')" class="px-3 py-1 rounded-lg bg-crimson-600/20 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs transition-all">Salin</button>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5">
+                                <div class="text-[11px] text-gray-400">Lokasi Studio Operasional</div>
+                                <div class="font-semibold text-white text-xs sm:text-sm mt-0.5">Surabaya, Jawa Timur • Melayani Online Seluruh Indonesia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-5 mt-5 border-t border-white/10 flex items-center gap-6 text-xs text-gray-400">
+                        <span class="hover:text-white cursor-pointer" onclick="showToast('Garansi Revisi & Uang Kembali jika tidak sesuai kesepakatan.')">Garansi Layanan</span>
+                        <span class="hover:text-white cursor-pointer" onclick="showToast('Identitas & kode proyek Anda dijamin 100% rahasia.')">Kebijakan Privasi</span>
+                    </div>
+                </div>
+
+                <!-- Bento Card 3: Vertical Social Pill Column (2 cols - Right Card in Video 0:19) -->
+                <div class="lg:col-span-2 rounded-[34px] p-5 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex lg:flex-col items-center justify-around gap-4">
+                    <a href="#kontak" onclick="showToast('Membuka WhatsApp Official JokiWeb.id')" aria-label="WhatsApp" class="w-14 h-14 rounded-full bg-gradient-to-br from-crimson-600 to-crimson-900 text-white hover:scale-110 transition-transform flex items-center justify-center text-2xl crimson-glow">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka Instagram @jokiweb.id')" aria-label="Instagram" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka TikTok @jokiweb.id')" aria-label="TikTok" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka GitHub Portfolio JokiWeb.id')" aria-label="GitHub" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== UNIVERSAL MODAL POPUP ==================== -->
+    <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="relative w-full max-w-xl rounded-3xl bg-obsidian-900 border border-crimson-500/50 p-6 sm:p-8 shadow-2xl crimson-glow max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAppModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-obsidian-800 hover:bg-crimson-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="app-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div id="app-toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-crimson-700 to-obsidian-900 text-white border border-crimson-400/50 shadow-2xl">
+        <i class="fa-solid fa-bolt text-yellow-300"></i>
+        <span id="app-toast-text" class="text-xs sm:text-sm font-medium">Notifikasi</span>
+    </div>
+
+    <!-- ==================== JAVASCRIPT: 100% AUTOMATED ANIMATIONS ==================== -->
+    <script>
+        // 1. HERO CONVERGENCE AUTOMATIC SCROLL DRIVER (Video 0:00 - 0:04)
+        let isHeroConverged = false;
+
+        function applyHeroPositions(converged) {
+            const icons = document.querySelectorAll('#floating-icons-stage .hero-icon-item');
+            const leftCopy = document.getElementById('hero-left-copy');
+            const rightCopy = document.getElementById('hero-right-copy');
+            const dynBg = document.getElementById('hero-dynamic-bg');
+            const phone = document.getElementById('hero-phone');
+            const defaultView = document.getElementById('phone-default-view');
+            const convergedView = document.getElementById('phone-converged-view');
+            
+            const isMobile = window.innerWidth < 640;
+            const scaleFactor = isMobile ? 0.52 : 1;
+
+            icons.forEach(icon => {
+                if (converged) {
+                    const px = parseFloat(icon.dataset.phoneX);
+                    const py = parseFloat(icon.dataset.phoneY);
+                    const pr = parseFloat(icon.dataset.phoneR);
+                    const ps = parseFloat(icon.dataset.phoneScale);
+                    icon.style.transform = `translate3d(${px}px, ${py}px, 0) rotate(${pr}deg) scale(${ps})`;
+                } else {
+                    const sx = parseFloat(icon.dataset.scatterX) * scaleFactor;
+                    const sy = parseFloat(icon.dataset.scatterY) * scaleFactor;
+                    const sr = parseFloat(icon.dataset.scatterR);
+                    icon.style.transform = `translate3d(${sx}px, ${sy}px, 0) rotate(${sr}deg) scale(1)`;
+                }
+            });
+
+            if (converged) {
+                if (leftCopy) {
+                    leftCopy.classList.remove('opacity-0', '-translate-x-10');
+                    leftCopy.classList.add('opacity-100', 'translate-x-0');
+                }
+                if (rightCopy) {
+                    rightCopy.classList.remove('opacity-0', 'translate-x-10');
+                    rightCopy.classList.add('opacity-100', 'translate-x-0');
+                }
+                if (dynBg) dynBg.style.opacity = '0.92';
+                if (phone) phone.style.transform = 'translateY(-10px) scale(1.02)';
+                
+                // Show Phone Live Terminal
+                if (defaultView) defaultView.classList.add('hidden');
+                if (convergedView) {
+                    convergedView.classList.remove('hidden');
+                    convergedView.classList.add('block');
+                }
+            } else {
+                if (leftCopy) {
+                    leftCopy.classList.add('opacity-0', '-translate-x-10');
+                    leftCopy.classList.remove('opacity-100', 'translate-x-0');
+                }
+                if (rightCopy) {
+                    rightCopy.classList.add('opacity-0', 'translate-x-10');
+                    rightCopy.classList.remove('opacity-100', 'translate-x-0');
+                }
+                if (dynBg) dynBg.style.opacity = '0.3';
+                if (phone) phone.style.transform = 'translateY(8px) scale(0.98)';
+                
+                if (defaultView) defaultView.classList.remove('hidden');
+                if (convergedView) {
+                    convergedView.classList.add('hidden');
+                    convergedView.classList.remove('block');
+                }
+            }
+        }
+
+        // 2. AUTOMATIC 3D CARD FLIP LOOP (CODING ⇄ AI LOGOS) - NO BUTTONS NEEDED
+        let isAIFlipped = false;
+
+        function autoCycleFlipWave() {
+            isAIFlipped = !isAIFlipped;
+            const heroInners = document.querySelectorAll('#floating-icons-stage .flip-card-inner');
+            heroInners.forEach((inner, idx) => {
+                setTimeout(() => {
+                    if (isAIFlipped) {
+                        inner.classList.add('is-flipped');
+                    } else {
+                        inner.classList.remove('is-flipped');
+                    }
+                }, idx * 80);
+            });
+        }
+
+        // Individual manual hover/click remains available as an easter egg
+        function flipSingleCard(cardContainer) {
+            const inner = cardContainer.querySelector('.flip-card-inner');
+            if (inner) {
+                inner.classList.toggle('is-flipped');
+            }
+        }
+
+        // 3. AVATAR RING EXPANSION (AUTOMATIC ON SCROLL - Video 0:09 - 0:10)
+        let isRingExpanded = false;
+        function updateAvatarRing(expanded) {
+            const nodes = document.querySelectorAll('.avatar-node');
+            const factor = window.innerWidth < 640 ? 0.48 : 1;
+            nodes.forEach((node, idx) => {
+                if (expanded) {
+                    const rx = parseFloat(node.dataset.rx) * factor;
+                    const ry = parseFloat(node.dataset.ry) * factor;
+                    node.style.transform = `translate3d(${rx}px, ${ry}px, 0) scale(1)`;
+                    node.style.opacity = '1';
+                } else {
+                    // Clustered tightly in center initially
+                    const offset = (idx - 2.5) * 14;
+                    node.style.transform = `translate3d(${offset}px, -110px, 0) scale(0.82)`;
+                    node.style.opacity = '0.65';
+                }
+            });
+        }
+
+        // 4. INTERACTIVE TOPIC PILLS IN BENTO CARD
+        function toggleTopicPill(btn, topicName) {
+            const isSelected = btn.textContent.trim().startsWith('✓');
+            if (isSelected) {
+                btn.textContent = '+ ' + btn.textContent.replace('✓ ', '');
+                btn.className = 'topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all';
+            } else {
+                btn.textContent = '✓ ' + btn.textContent.replace('+ ', '');
+                btn.className = 'topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all';
+                prefillOrder(topicName);
+            }
+        }
+
+        // 5. SERVICE DETAILS & BLOG MODAL DATA
+        const serviceDetails = [
+            {
+                title: 'Website Tugas Kuliah & Praktikum',
+                price: 'Mulai Rp 150.000',
+                badge: 'Selesai 1 - 3 Hari',
+                desc: 'Cocok untuk tugas mingguan, praktikum, UTS/UAS Pemrograman Web Dasar maupun Lanjut. Bebas pilih stack HTML/CSS/JS murni, Tailwind, Bootstrap, PHP Native, Laravel, hingga Python Flask.',
+                perks: ['Source Code Rapi + Komentar Penjelasan Lengkap', 'Database MySQL Lengkap & Normalisasi', 'Bantuan Pasang di XAMPP/Laragon via AnyDesk', 'Garansi Revisi Sesuai Modul Dosen Pengampu']
+            },
+            {
+                title: 'Website Skripsi & Tugas Akhir',
+                price: 'Mulai Rp 750.000',
+                badge: 'Full Bimbingan Sampai Sidang ACC',
+                desc: 'Pembuatan sistem aplikasi web skripsi/TA lengkap (Sistem Informasi, SPK metode SAW/AHP/TOPSIS/Moora, Klasifikasi AI, E-Commerce, GIS Pemetaan, dll).',
+                perks: ['Gratis Konsultasi Judul & Alur Sistem', 'Bonus Perancangan ERD, DFD, & Flowchart', 'Garansi Revisi Dosen Pembimbing & Penguji', 'Sesi Rekaman/Zoom Penjelasan Baris Kode Program']
+            },
+            {
+                title: 'Landing Page UMKM & Promosi Iklan',
+                price: 'Mulai Rp 350.000',
+                badge: 'Desain Premium & High Conversion',
+                desc: 'Halaman web promosi dengan animasi modern seperti di TikTok untuk meningkatkan kepercayaan calon pembeli produk atau jasa bisnis Anda.',
+                perks: ['Desain Custom Dark/Light Mode Elegan', 'Integrasi Tombol Order WhatsApp Otomatis', 'SEO Friendly & Skor Google PageSpeed 99/100', 'Gratis Setup Domain & Hosting']
+            },
+            {
+                title: 'Website Toko Online / E-Commerce',
+                price: 'Mulai Rp 850.000',
+                badge: 'Otomatisasi Bisnis Modern',
+                desc: 'Toko online profesional lengkap dengan katalog produk, keranjang belanja, integrasi hitung ongkos kirim ekspedisi kurir Indonesia, dan pembayaran otomatis QRIS/Transfer.',
+                perks: ['Dashboard Admin Kelola Produk, Stok & Pesanan', 'Integrasi Midtrans Payment Gateway & RajaOngkir', 'Cetak Invoice & Laporan Keuangan Penjualan', 'Tampilan Mobile-First Cepat Seperti Aplikasi']
+            },
+            {
+                title: 'Web Apps & Sistem Custom',
+                price: 'Harga Nego Sesuai Fitur',
+                badge: 'Skala Bisnis, Startup & Akademik',
+                desc: 'Pengembangan web khusus terstruktur (Sistem Kasir POS, Absensi Geolocation, Manajemen Klinik, Sistem Informasi Akademik SIAKAD, dsb).',
+                perks: ['Multi-Role Login (Admin, Manajer, Staf, User)', 'Keamanan Data & Skrip Backup Database', 'Export Laporan PDF & Excel Otomatis', 'Garansi Maintenance & Server Monitoring']
+            },
+            {
+                title: 'Jasa Fix Bug, Error & Slicing Figma',
+                price: 'Mulai Rp 100.000',
+                badge: 'Pengerjaan Kilat Express',
+                desc: 'Website Anda mendadak error merah di terminal menjelang deadline? Atau punya desain UI di Figma yang ingin diubah menjadi kode rapi HTML/Tailwind/React?',
+                perks: ['Pengecekan & Pembersihan Bug Cepat', 'Slicing Pixel-Perfect & 100% Responsif', 'Penambahan Fitur Baru di Web yang Sudah Ada', 'Bantuan Upload ke Hosting/cPanel/VPS']
+            }
+        ];
+
+        const blogArticles = [
+            {
+                title: 'Rahasia Presentasi Web Skripsi Agar Langsung Dapat Nilai A+',
+                tag: 'Panduan Akademik',
+                body: `
+                    <p class="mb-3">Saat sidang skripsi, dosen penguji biasanya menguji pemahaman Anda terhadap alur data program, bukan meminta Anda menghafal ribuan baris kode dari nol.</p>
+                    <h4 class="font-bold text-white mb-1">1. Kuasai Alur Input hingga Output (CRUD)</h4>
+                    <p class="mb-3">Pahami bagaimana data dari formulir disimpan ke tabel database MySQL dan bagaimana query SQL menampilkannya kembali ke tabel view.</p>
+                    <h4 class="font-bold text-white mb-1">2. Ketahui Letak File Penting (MVC Architecture)</h4>
+                    <p class="mb-3">Di JokiWeb.id, setiap pengiriman source code selalu dilengkapi panduan letak <em>Routes</em>, <em>Controller</em>, dan <em>Blade View</em> sehingga jika dosen meminta ubah teks atau formula logika saat sidang, Anda bisa langsung menunjukkan file yang tepat.</p>
+                    <h4 class="font-bold text-white mb-1">3. Latihan Simulasi Tanya Jawab</h4>
+                    <p>Pahami alasan pemilihan metode dan logika utama agar dapat menjawab pertanyaan dosen penguji dengan tenang dan percaya diri.</p>
+                `
+            },
+            {
+                title: 'Kapan Harus Pakai Laravel, React, atau Python Backend?',
+                tag: 'Arsitektur Teknologi',
+                body: `
+                    <p class="mb-3">Memilih stack teknologi yang tepat akan menghemat waktu dan memastikan sistem Anda berjalan stabil:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-3">
+                        <li><strong>Laravel 11:</strong> Fondasi terbaik untuk sistem informasi akademik, skripsi, dan aplikasi dengan relasi database kompleks karena keamanan ORM Eloquent-nya yang matang.</li>
+                        <li><strong>React.js &amp; Tailwind:</strong> Pilihan utama untuk antarmuka interaktif, SPA (Single Page Application), dan landing page beranimasi halus tanpa reload halaman.</li>
+                        <li><strong>Python:</strong> Sangat direkomendasikan jika sistem Anda membutuhkan fitur klasifikasi data, pengolahan citra, atau algoritma matematika khusus.</li>
+                    </ul>
+                    <p>Kombinasi Laravel sebagai backend dan React/Tailwind sebagai frontend merupakan standar emas di industri saat ini.</p>
+                `
+            },
+            {
+                title: 'Desain Landing Page Dark Mode & Gradasi Merah yang Menaikkan Omzet',
+                tag: 'UI/UX & Konversi',
+                body: `
+                    <p class="mb-3">Perpaduan warna hitam obsidian (#050507) dan aksen merah crimson (#dc2626) menciptakan kontras visual yang kuat dan memancarkan kesan premium.</p>
+                    <h4 class="font-bold text-white mb-1">Psikologi Visual</h4>
+                    <p class="mb-3">Warna merah memicu rasa urgensi dan energi positif, membuat tombol Call-to-Action (WhatsApp / Pesan Sekarang) langsung menonjol di pandangan pertama.</p>
+                    <h4 class="font-bold text-white mb-1">Animasi Halus ala TikTok</h4>
+                    <p>Animasi elemen melayang (antigravity), kartu 3D yang membalik otomatis, dan mockup ponsel yang menyerap modul fitur menciptakan interaksi menyenangkan bagi calon pembeli, menaikkan tingkat konversi hingga berkali lipat.</p>
+                `
+            }
+        ];
+
+        function openServiceDetail(index) {
+            const item = serviceDetails[index];
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <span class="px-3 py-1 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 text-xs font-semibold">${item.badge}</span>
+                <h3 class="font-display font-bold text-2xl text-white mt-3">${item.title}</h3>
+                <div class="text-crimson-400 font-bold text-lg mt-1">${item.price}</div>
+                <p class="text-gray-300 text-sm leading-relaxed my-4">${item.desc}</p>
+                <div class="p-4 rounded-2xl bg-obsidian-950 border border-white/10 space-y-2 mb-5">
+                    <div class="text-xs font-bold text-white uppercase tracking-wider">Fasilitas Lengkap Paket:</div>
+                    ${item.perks.map(p => `<div class="text-xs text-gray-300 flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i><span>${p}</span></div>`).join('')}
+                </div>
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeAppModal()" class="px-5 py-2.5 rounded-xl bg-obsidian-800 text-gray-300 text-xs font-semibold hover:bg-obsidian-700">Tutup</button>
+                    <a href="#kontak" onclick="closeAppModal(); prefillOrder('${item.title}')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-crimson-600 to-crimson-800 text-white text-xs font-bold crimson-glow">Pesan Paket Ini</a>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openBlogReader(index) {
+            const post = blogArticles[index];
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <span class="px-3 py-1 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 text-xs font-semibold">${post.tag}</span>
+                <h3 class="font-display font-bold text-2xl text-white mt-3 mb-4">${post.title}</h3>
+                <div class="text-gray-300 text-sm leading-relaxed space-y-2 border-t border-white/10 pt-4">${post.body}</div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-xs text-gray-400">Butuh bantuan konsultasi topik ini?</span>
+                    <a href="#kontak" onclick="closeAppModal(); prefillOrder('Konsultasi Artikel Blog')" class="px-5 py-2.5 rounded-xl bg-crimson-600 text-white text-xs font-bold hover:bg-crimson-500 transition-all">Konsultasi Gratis</a>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAppModal() {
+            const modal = document.getElementById('app-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 6. FORM ORDER & CLIPBOARD HELPERS
+        function prefillOrder(serviceText) {
+            const select = document.getElementById('order-service');
+            const notes = document.getElementById('order-notes');
+            
+            if (select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (serviceText.toLowerCase().includes(select.options[i].value.toLowerCase().split(' ')[0])) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            if (notes && !notes.value.includes(serviceText)) {
+                notes.value = `Halo Admin JokiWeb.id, saya tertarik dengan layanan: ${serviceText}. `;
+            }
+            showToast(`Layanan "${serviceText}" dipilih!`);
+        }
+
+        function submitOrderForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('order-name').value.trim();
+            const service = document.getElementById('order-service').value;
+            const notes = document.getElementById('order-notes').value.trim();
+
+            const waMessage = `Halo Admin JokiWeb.id!\n\nSaya ingin memesan jasa pembuatan website:\n• Nama: ${name}\n• Layanan: ${service}\n• Detail: ${notes}\n\nMohon info estimasi harga dan waktu pengerjaan. Terima kasih!`;
+            const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(waMessage)}`;
+
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <div class="text-center space-y-4">
+                    <div class="w-14 h-14 rounded-full bg-green-500/20 border border-green-500/40 text-green-400 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white">Pesanan Siap Dikirim!</h3>
+                    <p class="text-xs text-gray-400">Halo <strong>${name}</strong>, klik tombol di bawah untuk langsung melanjutkan obrolan dengan tim developer kami di WhatsApp:</p>
+                    <pre class="p-4 rounded-2xl bg-obsidian-950 border border-white/10 text-left text-xs text-gray-300 whitespace-pre-wrap font-mono">${waMessage}</pre>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Buka WhatsApp Sekarang
+                        </a>
+                        <button onclick="copyText(\`${waMessage.replace(/`/g, '')}\`, 'Format Pesanan'); closeAppModal();" class="py-3 px-4 rounded-xl bg-obsidian-800 text-gray-200 text-xs font-semibold hover:bg-obsidian-700">
+                            Salin Pesan
+                        </button>
+                    </div>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function copyText(text, label) {
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(`${label} berhasil disalin!`);
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('app-toast');
+            const text = document.getElementById('app-toast-text');
+            text.textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        // 7. INITIALIZE AUTOMATIC ANIMATIONS ON LOAD
+        window.addEventListener('DOMContentLoaded', () => {
+            // Apply initial positions
+            applyHeroPositions(false);
+            updateAvatarRing(false);
+
+            // Automatically cycle flip the kotak-kotak cards every 3.8 seconds continuously!
+            setInterval(() => {
+                autoCycleFlipWave();
+            }, 3800);
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobile-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const mobileIcon = document.getElementById('mobile-icon');
+
+            if (mobileBtn && mobileDrawer) {
+                mobileBtn.addEventListener('click', () => {
+                    const hidden = mobileDrawer.classList.contains('hidden');
+                    mobileDrawer.classList.toggle('hidden', !hidden);
+                    mobileIcon.className = hidden ? 'fa-solid fa-xmark text-lg' : 'fa-solid fa-bars text-lg';
+                });
+
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileDrawer.classList.add('hidden');
+                        mobileIcon.className = 'fa-solid fa-bars text-lg';
+                    });
+                });
+            }
+
+            // Scroll-driven convergence & reveal triggers (100% automated on scroll)
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+
+                // 1. Hero boxes glide and dock into smartphone when scrolling down > 45px
+                if (scrollY > 45 && !isHeroConverged) {
+                    isHeroConverged = true;
+                    applyHeroPositions(true);
+                } else if (scrollY <= 30 && isHeroConverged) {
+                    isHeroConverged = false;
+                    applyHeroPositions(false);
+                }
+
+                // 2. Avatar ring automatically expands when Layanan section is in view
+                const ringSection = document.getElementById('avatar-ring-section');
+                if (ringSection) {
+                    const rect = ringSection.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.75 && rect.bottom > 100) {
+                        if (!isRingExpanded) {
+                            isRingExpanded = true;
+                            updateAvatarRing(true);
+                        }
+                    } else if (isRingExpanded) {
+                        isRingExpanded = false;
+                        updateAvatarRing(false);
+                    }
+                }
+
+                // 3. Reveal-up sections smoothly
+                document.querySelectorAll('.reveal-up').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.88) {
+                        el.classList.add('active');
+                    }
+                });
+            });
+
+            // Initial check
+            setTimeout(() => {
+                document.querySelectorAll('.reveal-up').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 150);
+
+            window.addEventListener('resize', () => {
+                applyHeroPositions(isHeroConverged);
+                updateAvatarRing(isRingExpanded);
+            });
+        });
+    </script>
+</body>
+</html>
