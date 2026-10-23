@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimsonDev - Jasa Pembuatan Website & Pendampingan Koding Profesional</title>
+    <meta name="description" content="Jasa pembuatan website profesional untuk UMKM, toko online, company profile, serta pendampingan teknis dan pengerjaan sistem informasi web di Surabaya & seluruh Indonesia.">
+    <meta name="keywords" content="jasa pembuatan website surabaya, bikin website umkm, jasa web skripsi, pembuatan landing page, developer laravel react">
+    <meta name="author" content="CrimsonDev Studio">
+    <link rel="canonical" href="https://crimsondev.id/">
+    <meta name="theme-color" content="#090a0b">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crimsondev.id/">
+    <meta property="og:title" content="CrimsonDev - Jasa Pembuatan Website & Solusi Web Profesional">
+    <meta property="og:description" content="Website bisnis & akademik online tepat waktu, rapi, dan bergaransi. Source code 100% milik Anda dengan pendampingan teknis langsung.">
+    <meta property="og:image" content="https://crimsondev.id/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CrimsonDev - Studio Pembuatan Website Profesional">
+    <meta name="twitter:description" content="Website bisnis & kebutuhan akademik selesai tepat waktu dengan clean code dan garansi revisi.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CrimsonDev",
+      "image": "https://crimsondev.id/logo.png",
+      "description": "Layanan profesional pembuatan website UMKM, Landing Page, Toko Online, dan bimbingan teknis sistem informasi web.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surabaya",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-7.2575",
+        "longitude": "112.7521"
+      },
+      "url": "https://crimsondev.id",
+      "telephone": "+6281234567890",
+      "priceRange": "Rp 350.000 - Rp 3.500.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "08:00",
+          "closes": "23:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        ink: {
+                            950: '#070809',
+                            900: '#0c0d0f',
+                            850: '#111316',
+                            800: '#16191d',
+                            750: '#1c2026',
+                            700: '#232830',
+                            600: '#2d333d',
+                        },
+                        crimson: {
+                            50: '#fdf2f2',
+                            100: '#fde8e8',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling with navbar offset */
+        html {
+            scroll-padding-top: 5.5rem;
+        }
+
+        /* Subtle custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090a0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #dc2626, #3a151b);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ef4444;
+        }
+
+        /* ==================== AESTHETIC RED-BLACK GRADIENT BACKGROUND ==================== */
+        body {
+            background-color: #08090a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.17) 0%, rgba(153, 27, 27, 0.08) 32%, transparent 68%),
+                radial-gradient(circle at 90% 40%, rgba(185, 28, 28, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 10% 70%, rgba(220, 38, 38, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, #090a0b 0%, #0c0d0f 100%);
+            background-attachment: fixed;
+        }
+
+        /* ==================== NIMBUN / POPPING CARDS (ALL BOXES) ==================== */
+        .surface-card {
+            background: linear-gradient(160deg, #16191f 0%, #0f1115 65%, #180e12 100%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+                0 12px 30px -8px rgba(0, 0, 0, 0.8),
+                0 4px 8px -2px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .surface-card-interactive:hover {
+            transform: translateY(-8px) scale(1.015);
+            border-color: rgba(220, 38, 38, 0.65);
+            border-top-color: rgba(248, 113, 113, 0.85);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+                0 24px 48px -12px rgba(0, 0, 0, 0.9),
+                0 0 30px -4px rgba(220, 38, 38, 0.45);
+        }
+
+        /* Specific Nimbun Box for Hero Features */
+        .box-nimbun {
+            background: linear-gradient(150deg, #1c212a 0%, #12151a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
+                0 10px 22px -4px rgba(0, 0, 0, 0.75),
+                0 3px 6px 0 rgba(0, 0, 0, 0.5);
+            border-radius: 0.85rem;
+            transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+            cursor: pointer;
+        }
+        .box-nimbun:hover {
+            transform: translateY(-7px) scale(1.02);
+            background: linear-gradient(150deg, #262c38 0%, #171b22 100%);
+            border-color: rgba(239, 68, 68, 0.75);
+            border-top-color: rgba(254, 202, 202, 0.9);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.35) inset,
+                0 22px 36px -8px rgba(0, 0, 0, 0.95),
+                0 0 25px -2px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Stat pill nimbun */
+        .stat-nimbun {
+            background: linear-gradient(160deg, #171a20 0%, #0e1013 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.7), 0 1px 0 0 rgba(255,255,255,0.08) inset;
+            transition: all 0.25s ease;
+        }
+        .stat-nimbun:hover {
+            transform: translateY(-4px);
+            border-color: rgba(220, 38, 38, 0.5);
+            box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.85), 0 0 16px -3px rgba(220, 38, 38, 0.35);
+        }
+
+        /* ==================== SCROLL REVEAL ANIMATIONS ==================== */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-item.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+        .reveal-delay-4 { transition-delay: 400ms; }
+
+        /* Blinking Terminal Cursor */
+        @keyframes terminalBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .terminal-caret {
+            display: inline-block;
+            width: 7px;
+            height: 14px;
+            background-color: #22c55e;
+            vertical-align: middle;
+            animation: terminalBlink 1s infinite;
+        }
+
+        /* Aesthetic Glow Border Utility */
+        .aesthetic-glow {
+            box-shadow: 0 0 35px -8px rgba(220, 38, 38, 0.45);
+        }
+
+        /* Dialog Native Styling */
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(6px);
+        }
+        dialog[open] {
+            animation: dialog-fade-in 0.2s ease-out;
+        }
+        @keyframes dialog-fade-in {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Accordion summary arrow */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Reduced motion compliance */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal-item {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="text-zinc-200 font-sans antialiased selection:bg-crimson-600 selection:text-white flex flex-col min-h-screen">
+
+    <!-- ==================== HEADER & NAVBAR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-ink-950/90 backdrop-blur-md border-b border-crimson-900/40 shadow-[0_4px_25px_-5px_rgba(220,38,38,0.15)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson-500 rounded-lg p-1">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson-600 to-ink-950 border border-crimson-500/50 flex items-center justify-center text-white font-mono font-bold text-lg shadow-[0_0_15px_-3px_rgba(220,38,38,0.5)] group-hover:scale-105 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-xl tracking-tight text-white flex items-center gap-1">
+                            CRIMSON<span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-crimson-600">DEV</span>
+                        </span>
+                        <span class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 -mt-0.5">Web Studio & Mentoring</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-zinc-300" aria-label="Navigasi Utama">
+                    <a href="#home" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">Beranda</a>
+                    <a href="#layanan" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">Layanan & Harga</a>
+                    <a href="#estimator" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">Kalkulator Biaya</a>
+                    <a href="#portofolio" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">Portofolio</a>
+                    <a href="#alur" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">Alur Kerja</a>
+                    <a href="#faq" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#kontak" class="px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-crimson-600 via-red-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 transition-all flex items-center gap-2 shadow-[0_4px_18px_-4px_rgba(220,38,38,0.55)] border border-crimson-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <span>Konsultasi Proyek</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Buka navigasi menu" class="p-2.5 rounded-xl bg-ink-800 text-zinc-300 hover:text-white border border-zinc-700/60 focus:outline-none focus:ring-2 focus:ring-crimson-500">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ink-950/98 border-b border-crimson-900/50 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">Beranda</a>
+            <a href="#layanan" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">Layanan & Harga</a>
+            <a href="#estimator" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">Kalkulator Biaya</a>
+            <a href="#portofolio" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">Portofolio</a>
+            <a href="#alur" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">Alur Kerja</a>
+            <a href="#faq" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800/60">FAQ</a>
+            <div class="pt-3">
+                <a href="#kontak" class="mobile-nav-link w-full py-3 rounded-xl font-semibold text-center text-white bg-gradient-to-r from-crimson-600 to-crimson-700 flex items-center justify-center gap-2">
+                    Mulai Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- ==================== 1. HERO SECTION ==================== -->
+        <section id="home" class="relative pt-14 pb-16 lg:pt-24 lg:pb-24 border-b border-zinc-800/60 scroll-mt-24 overflow-hidden">
+            <!-- Subtle Aesthetic Gradient Light Accent -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-72 bg-crimson-600/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-7 text-center lg:text-left reveal-item">
+                        
+                        <!-- Main Value Headline with Aesthetic Red-Black Gradient Text -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.18]">
+                            Website Bisnis & Kebutuhan Akademik Anda, <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-rose-500 to-red-600 font-extrabold drop-shadow-[0_2px_15px_rgba(220,38,38,0.4)]">Selesai Tepat Waktu</span> Tanpa Rasa Cemas.
+                        </h1>
+
+                        <!-- Honest, Specific Value Proposition -->
+                        <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Kami membangun landing page konversi tinggi untuk pelaku usaha, toko online siap jualan, serta sistem informasi tugas akhir/skripsi dengan arsitektur kode bersih. Lengkap dengan sesi pendampingan 1-on-1 agar Anda paham alurnya secara menyeluruh.
+                        </p>
+
+                        <!-- Primary & Secondary CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#layanan" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-crimson-600 via-red-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 transition-all flex items-center justify-center gap-2.5 text-base shadow-[0_6px_22px_-4px_rgba(220,38,38,0.55)] border border-crimson-400/30 focus:outline-none focus:ring-2 focus:ring-crimson-400">
+                                <span>Lihat Paket & Harga</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                            <a href="#portofolio" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-zinc-300 hover:text-white bg-ink-800 hover:bg-ink-700 border border-zinc-700/80 transition-all flex items-center justify-center gap-2 text-base shadow-md hover:-translate-y-0.5">
+                                <span>Lihat Hasil Proyek</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Tangible Fact-Based Proof Bar (Mimbun Cards) -->
+                        <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3.5 text-left">
+                            <div class="stat-nimbun p-3.5 rounded-xl">
+                                <span class="font-mono font-bold text-base text-white block">100% Milik Anda</span>
+                                <span class="text-xs text-zinc-400">Full source code & DB</span>
+                            </div>
+                            <div class="stat-nimbun p-3.5 rounded-xl">
+                                <span class="font-mono font-bold text-base text-white block">1-on-1 Mentoring</span>
+                                <span class="text-xs text-zinc-400">Instalasi & bimbingan</span>
+                            </div>
+                            <div class="stat-nimbun p-3.5 rounded-xl">
+                                <span class="font-mono font-bold text-base text-white block">Garansi 30 Hari</span>
+                                <span class="text-xs text-zinc-400">Bebas bug & revisi</span>
+                            </div>
+                            <div class="stat-nimbun p-3.5 rounded-xl">
+                                <span class="font-mono font-bold text-base text-white block">Surabaya / Online</span>
+                                <span class="text-xs text-zinc-400">Melayani se-Indonesia</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Showcase Visual with Highly Mimbun/Popping Cards & MacBook CMD Terminal -->
+                    <div class="lg:col-span-5 reveal-item reveal-delay-2">
+                        <div class="surface-card rounded-2xl overflow-hidden border border-zinc-700/80 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.9),0_0_35px_-5px_rgba(220,38,38,0.25)] relative">
+                            
+                            <!-- Browser Chrome Bar -->
+                            <div class="bg-ink-850 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+                                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+                                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                                </div>
+                                <div class="px-3 py-1 rounded-md bg-ink-950 text-zinc-400 text-xs font-mono flex items-center gap-2 border border-zinc-800 max-w-[240px] truncate shadow-inner">
+                                    <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                    </svg>
+                                    <span>klien-umkm.crimsondev.id</span>
+                                </div>
+                                <div class="w-8"></div>
+                            </div>
+
+                            <!-- Showcase Content Inside Mockup -->
+                            <div class="p-5 space-y-4 bg-gradient-to-b from-ink-900 to-ink-950 relative">
+                                
+                                <!-- Header -->
+                                <div class="pb-2 border-b border-zinc-800/80">
+                                    <span class="text-[11px] font-mono uppercase text-crimson-400 font-semibold block">Kasus Nyata UMKM</span>
+                                    <h3 class="font-bold text-white text-base">Katalog & Order Otomatis WhatsApp</h3>
+                                </div>
+
+                                <!-- Container of Extra Mimbun Kotakan -->
+                                <div class="space-y-3 font-sans text-xs select-none">
+                                    
+                                    <!-- Kotakan 1 Mimbun -->
+                                    <div class="box-nimbun p-3.5 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white font-bold text-xs border border-zinc-600/50 shadow-md">1</div>
+                                            <div>
+                                                <div class="text-zinc-100 font-semibold text-xs">Desain Responsif Cepat</div>
+                                                <div class="text-zinc-400 text-[11px]">Ringan diakses di semua tipe HP pelanggan</div>
+                                            </div>
+                                        </div>
+                                        <span class="font-mono text-emerald-400 font-semibold text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">1.2s Load</span>
+                                    </div>
+
+                                    <!-- Kotakan 2 Mimbun -->
+                                    <div class="box-nimbun p-3.5 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white font-bold text-xs border border-zinc-600/50 shadow-md">2</div>
+                                            <div>
+                                                <div class="text-zinc-100 font-semibold text-xs">Checkout Langsung Format WA</div>
+                                                <div class="text-zinc-400 text-[11px]">Format teks nama, alamat & ringkasan otomatis</div>
+                                            </div>
+                                        </div>
+                                        <span class="font-mono text-zinc-300 text-xs bg-zinc-800/80 px-2 py-0.5 rounded border border-zinc-700">Siap Kirim</span>
+                                    </div>
+
+                                    <!-- Kotakan 3 Mimbun -->
+                                    <div class="box-nimbun p-3.5 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white font-bold text-xs border border-zinc-600/50 shadow-md">3</div>
+                                            <div>
+                                                <div class="text-zinc-100 font-semibold text-xs">Dashboard Admin Ringan</div>
+                                                <div class="text-zinc-400 text-[11px]">Update harga & foto semudah update status</div>
+                                            </div>
+                                        </div>
+                                        <span class="font-mono text-zinc-300 text-xs bg-zinc-800/80 px-2 py-0.5 rounded border border-zinc-700">CRUD Aktif</span>
+                                    </div>
+                                </div>
+
+                                <!-- ==================== MACBOOK CMD / TERMINAL WINDOW ==================== -->
+                                <div class="mt-4 rounded-xl overflow-hidden border border-zinc-700/80 bg-[#070809] shadow-[0_8px_20px_-4px_rgba(0,0,0,0.85)]">
+                                    <!-- MacBook Terminal Header -->
+                                    <div class="bg-ink-800 px-3.5 py-2 border-b border-zinc-800 flex items-center justify-between">
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                                        </div>
+                                        <div class="text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+                                            <svg class="w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3"/></svg>
+                                            <span>crimsondev — zsh — 80×24</span>
+                                        </div>
+                                        <div class="w-6"></div>
+                                    </div>
+
+                                    <!-- MacBook Terminal Console Body -->
+                                    <div class="p-3.5 font-mono text-[11px] leading-relaxed text-zinc-300 space-y-1.5">
+                                        <div class="text-zinc-400">
+                                            <span class="text-emerald-400 font-semibold">crimson@macbook-pro</span>:<span class="text-cyan-400">~/projects/katalog-umkm</span>$ npm run build
+                                        </div>
+                                        <div class="text-zinc-400 pl-2">
+                                            > compiling tailwind assets & bundling router...
+                                        </div>
+                                        <div class="text-emerald-400 pl-2 flex items-center gap-1.5">
+                                            <span>✔ Built in 1.14s</span>
+                                            <span class="text-zinc-400">• 0 errors • Zero GPU lag</span>
+                                        </div>
+                                        <div class="text-zinc-400 pl-2">
+                                            ✔ WhatsApp Webhook: <span class="text-zinc-200">Ready & Verified</span>
+                                        </div>
+                                        <div class="text-zinc-300 pt-1">
+                                            <span class="text-emerald-400 font-semibold">crimson@macbook-pro</span>:<span class="text-cyan-400">~/projects/katalog-umkm</span>$ git push origin main <span class="terminal-caret"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer tag of mockup -->
+                                <div class="pt-1 text-center text-zinc-400 text-xs font-mono">
+                                    Arsitektur: Tailwind CSS • Alpine.js • PHP Laravel / Node.js
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 2. LAYANAN & PAKET HARGA TRANSPARAN ==================== -->
+        <section id="layanan" class="py-16 lg:py-24 border-b border-zinc-800/60 scroll-mt-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="max-w-3xl mb-12 reveal-item">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Layanan & Harga Transparan</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 tracking-tight">
+                        Pilih Solusi yang Sesuai dengan Kebutuhan Anda
+                    </h2>
+                    <p class="text-zinc-400 mt-2 text-sm sm:text-base leading-relaxed">
+                        Semua paket dilengkapi kepemilikan source code penuh, penjelasan alur program, dan garansi perbaikan bug pasca pengerjaan. Tidak ada biaya siluman.
+                    </p>
+                </div>
+
+                <!-- 3 Clear Main Services Grid (High Mimbun Surface Cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Paket 1: Landing Page Bisnis -->
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 sm:p-7 flex flex-col justify-between reveal-item reveal-delay-1">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">UMKM & Promo</span>
+                                <span class="text-xs font-mono text-zinc-400">2 - 4 Hari</span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-2">Landing Page Konversi</h3>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5">
+                                Halaman satu muka profesional berkecepatan tinggi untuk iklan Meta/Google Ads, katalog produk, atau profil jasa usaha Anda.
+                            </p>
+
+                            <div class="p-3.5 rounded-xl bg-ink-950 border border-zinc-800/90 mb-6 shadow-inner">
+                                <span class="text-[11px] font-mono text-zinc-400 block">Investasi Mulai:</span>
+                                <span class="text-2xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-crimson-400">Rp 350.000</span>
+                                <span class="text-[11px] text-zinc-400 block mt-0.5">Sekali bayar, tanpa biaya bulanan tersembunyi</span>
+                            </div>
+
+                            <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-300 mb-6" aria-label="Fitur Landing Page">
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Desain responsif ramah smartphone</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Tombol langsung ke WhatsApp dengan teks terisi</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Bantuan setup hosting & domain Anda</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Garansi revisi minor 14 hari</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <button type="button" data-service-trigger="landing-page" class="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-zinc-800 to-zinc-900 hover:from-crimson-600 hover:to-crimson-700 active:bg-crimson-700 border border-zinc-700 hover:border-crimson-500/50 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-crimson-500">
+                                Pilih Paket Ini
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paket 2: E-Commerce & Katalog -->
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative border-crimson-900/60 reveal-item reveal-delay-2 shadow-[0_15px_35px_-8px_rgba(220,38,38,0.25)]">
+                        <div class="absolute -top-3 right-6 px-3.5 py-0.5 rounded-full bg-gradient-to-r from-crimson-600 to-red-600 text-white text-[11px] font-mono font-bold shadow-md border border-crimson-400/40">
+                            POPULER
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">Toko Online</span>
+                                <span class="text-xs font-mono text-zinc-400">4 - 8 Hari</span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-2">Web Toko & Katalog Interaktif</h3>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5">
+                                Website jual beli produk dengan keranjang belanja, integrasi ongkir, dan checkout langsung terhubung ke WhatsApp penjual.
+                            </p>
+
+                            <div class="p-3.5 rounded-xl bg-ink-950 border border-zinc-800/90 mb-6 shadow-inner">
+                                <span class="text-[11px] font-mono text-zinc-400 block">Investasi Mulai:</span>
+                                <span class="text-2xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-crimson-400">Rp 850.000</span>
+                                <span class="text-[11px] text-zinc-400 block mt-0.5">Termasuk dashboard kelola produk</span>
+                            </div>
+
+                            <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-300 mb-6" aria-label="Fitur Toko Online">
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Halaman Admin untuk tambah/edit produk & stok</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Keranjang belanja + format invoice otomatis</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Integrasi kalkulator ongkos kirim (JNE/J&T/dll)</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Garansi bug & asistensi admin 30 hari</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <button type="button" data-service-trigger="ecommerce" class="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 active:bg-crimson-700 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-crimson-400">
+                                Pilih Paket Ini
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paket 3: Sistem Informasi & Bimbingan Akademik -->
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 sm:p-7 flex flex-col justify-between reveal-item reveal-delay-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">Sistem & Akademik</span>
+                                <span class="text-xs font-mono text-zinc-400">3 - 14 Hari</span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-2">Web App & Pendampingan Skripsi</h3>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5">
+                                Pembuatan aplikasi web kustom (Laravel, React, MySQL) lengkap dengan pendampingan live coding 1-on-1 agar siap sidang tanpa rasa cemas.
+                            </p>
+
+                            <div class="p-3.5 rounded-xl bg-ink-950 border border-zinc-800/90 mb-6 shadow-inner">
+                                <span class="text-[11px] font-mono text-zinc-400 block">Investasi Mulai:</span>
+                                <span class="text-2xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-crimson-400">Rp 750.000</span>
+                                <span class="text-[11px] text-zinc-400 block mt-0.5">Sesuai kompleksitas modul & metode</span>
+                            </div>
+
+                            <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-300 mb-6" aria-label="Fitur Sistem Informasi">
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Full CRUD, role login, & export PDF/Excel</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Implementasi metode (AHP, SAW, TOPSIS, REST API, dll)</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Instalasi via Zoom/AnyDesk langsung di laptop Anda</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Sesi penjelasan alur koding untuk persiapan sidang</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <button type="button" data-service-trigger="webapp-skripsi" class="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-zinc-800 to-zinc-900 hover:from-crimson-600 hover:to-crimson-700 active:bg-crimson-700 border border-zinc-700 hover:border-crimson-500/50 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-crimson-500">
+                                Pilih Paket Ini
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 3. ESTIMATOR HARGA INTERAKTIF ==================== -->
+        <section id="estimator" class="py-16 lg:py-24 border-b border-zinc-800/60 scroll-mt-24 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10 reveal-item">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Kalkulator Transparan</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 tracking-tight">
+                        Hitung Perkiraan Biaya Website Anda
+                    </h2>
+                    <p class="text-zinc-400 mt-2 text-xs sm:text-sm">
+                        Pilih komponen yang Anda butuhkan. Rincian ini dapat langsung dikirim ke WhatsApp untuk verifikasi diskon dan waktu pengerjaan.
+                    </p>
+                </div>
+
+                <div class="surface-card rounded-2xl p-6 sm:p-8 border border-zinc-700/80 shadow-[0_15px_35px_-8px_rgba(0,0,0,0.85)] reveal-item reveal-delay-1">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Left: Estimator Options -->
+                        <div class="space-y-5">
+                            <div>
+                                <label for="est-type" class="block text-xs font-semibold text-zinc-300 mb-1.5">1. Jenis Website</label>
+                                <select id="est-type" class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 text-sm text-zinc-200 focus:outline-none focus:border-crimson-500">
+                                    <option value="350000" data-label="Landing Page UMKM (1 Halaman)">Landing Page UMKM (1 Halaman) - Rp 350.000</option>
+                                    <option value="600000" data-label="Company Profile (Multi-Halaman)">Company Profile (Multi-Halaman) - Rp 600.000</option>
+                                    <option value="850000" data-label="Toko Online / Katalog WA">Toko Online / Katalog WA - Rp 850.000</option>
+                                    <option value="1200000" data-label="Web App / Sistem Skripsi">Web App / Sistem Informasi Skripsi - Rp 1.200.000</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="est-pages" class="block text-xs font-semibold text-zinc-300 mb-1.5">2. Jumlah Halaman / Modul</label>
+                                <select id="est-pages" class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 text-sm text-zinc-200 focus:outline-none focus:border-crimson-500">
+                                    <option value="0" data-label="Standar (1 - 3 Halaman/Modul)">Standar (1 - 3 Halaman/Modul) - Termasuk</option>
+                                    <option value="200000" data-label="Menengah (4 - 7 Halaman/Modul)">Menengah (4 - 7 Halaman/Modul) - +Rp 200.000</option>
+                                    <option value="450000" data-label="Kompleks (8+ Halaman/Modul)">Kompleks (8+ Halaman/Modul) - +Rp 450.000</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <span class="block text-xs font-semibold text-zinc-300 mb-2">3. Fasilitas Tambahan (Opsional)</span>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2.5 text-xs text-zinc-300 cursor-pointer">
+                                        <input type="checkbox" id="est-addon-domain" value="250000" data-label="Domain .COM + Hosting 1 Tahun" class="rounded bg-ink-950 border-zinc-700 text-crimson-600 focus:ring-0">
+                                        <span>Domain .com + Cloud Hosting 1 Tahun (+Rp 250rb)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2.5 text-xs text-zinc-300 cursor-pointer">
+                                        <input type="checkbox" id="est-addon-mentor" value="150000" data-label="Sesi Pendampingan Koding 1-on-1 Zoom" class="rounded bg-ink-950 border-zinc-700 text-crimson-600 focus:ring-0">
+                                        <span>Sesi Bimbingan / Penjelasan Kode via Zoom (+Rp 150rb)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2.5 text-xs text-zinc-300 cursor-pointer">
+                                        <input type="checkbox" id="est-addon-payment" value="200000" data-label="Integrasi Payment Gateway / QRIS" class="rounded bg-ink-950 border-zinc-700 text-crimson-600 focus:ring-0">
+                                        <span>Payment Gateway / QRIS Otomatis (+Rp 200rb)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Dynamic Calculation Summary Card (Mimbun Inner) -->
+                        <div class="bg-gradient-to-b from-ink-950 to-ink-900 rounded-xl p-5 border border-zinc-800 shadow-inner flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono uppercase text-zinc-400 block mb-1">Estimasi Rentang Biaya</span>
+                                <div class="text-3xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-rose-500 drop-shadow-[0_2px_10px_rgba(220,38,38,0.3)]" id="est-total-display">
+                                    Rp 350.000
+                                </div>
+                                <span class="text-[11px] text-zinc-400 block mt-1">Estimasi pengerjaan: <strong id="est-duration-display" class="text-zinc-200">2 - 4 Hari Kerja</strong></span>
+
+                                <div class="mt-4 pt-3 border-t border-zinc-800/80 text-xs text-zinc-300 space-y-1.5 font-mono">
+                                    <div class="text-[11px] text-zinc-400">Ringkasan Konfigurasi:</div>
+                                    <div id="est-summary-text" class="text-xs text-zinc-300 whitespace-pre-line leading-relaxed font-sans">
+                                        • Landing Page UMKM (1 Halaman)
+                                        • Standar (1 - 3 Halaman)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-5 mt-4 border-t border-zinc-800/80">
+                                <a id="est-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 transition-colors flex items-center justify-center gap-2 shadow-md">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                    </svg>
+                                    <span>Kirim Rincian Estimasi ke WA</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 4. BUKTI KERJA & PORTOFOLIO ==================== -->
+        <section id="portofolio" class="py-16 lg:py-24 border-b border-zinc-800/60 scroll-mt-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-item">
+                    <div>
+                        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Bukti Hasil Kerja</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 tracking-tight">
+                            Portofolio Proyek Terakhir
+                        </h2>
+                    </div>
+                    <p class="text-zinc-400 text-sm max-w-md">
+                        Contoh website dan sistem informasi nyata yang telah kami bangun dengan standar clean code dan arsitektur rapi.
+                    </p>
+                </div>
+
+                <!-- 4 Real Case Studies (Mimbun Surface Cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Proyek 1: Warung Kopi Nusantara -->
+                    <article class="surface-card surface-card-interactive rounded-2xl overflow-hidden border border-zinc-800 group reveal-item reveal-delay-1">
+                        <div class="bg-ink-850 px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-zinc-400">Landing Page & Reservasi</span>
+                            <span class="text-[11px] font-mono text-emerald-400">Live Client</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-bold text-lg text-white">Warung Kopi Senja Nusantara</h3>
+                                <span class="text-xs font-mono text-zinc-400">Selesai 3 Hari</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                                Redesain landing page usaha kuliner lokal dengan integrasi reservasi meja dan tombol pemesanan online via WhatsApp. Mengurangi bounce rate hingga 35%.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Tailwind CSS</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Alpine.js</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">WA Automation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyek 2: MediClinic Hub -->
+                    <article class="surface-card surface-card-interactive rounded-2xl overflow-hidden border border-zinc-800 group reveal-item reveal-delay-2">
+                        <div class="bg-ink-850 px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-zinc-400">Sistem Informasi Skripsi</span>
+                            <span class="text-[11px] font-mono text-emerald-400">Nilai A (Lulus Sidang)</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-bold text-lg text-white">Sistem Rekam Medis & Antrean Klinik</h3>
+                                <span class="text-xs font-mono text-zinc-400">Selesai 10 Hari</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                                Aplikasi manajemen pasien, antrean online, rekam medis dokter, serta cetak resep PDF. Dilengkapi sesi bedah koding via AnyDesk sebelum hari sidang.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Laravel 11</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">MySQL</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">DomPDF Export</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyek 3: Toko Fashion Santai -->
+                    <article class="surface-card surface-card-interactive rounded-2xl overflow-hidden border border-zinc-800 group reveal-item reveal-delay-3">
+                        <div class="bg-ink-850 px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-zinc-400">E-Commerce & Retail</span>
+                            <span class="text-[11px] font-mono text-emerald-400">Live Client</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-bold text-lg text-white">Toko Baju & Aksesoris "UrbanWear"</h3>
+                                <span class="text-xs font-mono text-zinc-400">Selesai 6 Hari</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                                Toko online katalog dengan keranjang belanja, integrasi API RajaOngkir, dan checkout langsung format rapi ke WhatsApp toko.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">React.js</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Tailwind</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">RajaOngkir API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyek 4: LogiTrack Express -->
+                    <article class="surface-card surface-card-interactive rounded-2xl overflow-hidden border border-zinc-800 group reveal-item reveal-delay-4">
+                        <div class="bg-ink-850 px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-zinc-400">Custom Web App</span>
+                            <span class="text-[11px] font-mono text-emerald-400">Internal System</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-bold text-lg text-white">Sistem Tracking Logistik & Kurir</h3>
+                                <span class="text-xs font-mono text-zinc-400">Selesai 12 Hari</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                                Dashboard pelacakan status pengiriman paket internal untuk perusahaan ekspedisi kargo regional dengan grafik analitik armada.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Node.js Express</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">PostgreSQL</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Chart.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 5. ALUR KERJA JELAS & TRANSPARAN ==================== -->
+        <section id="alur" class="py-16 lg:py-24 border-b border-zinc-800/60 scroll-mt-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-12 reveal-item">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Proses Kerja</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 tracking-tight">
+                        Alur Pengerjaan Terstruktur Tanpa Tebak-Tebakan
+                    </h2>
+                    <p class="text-zinc-400 mt-2 text-sm sm:text-base">
+                        Setiap tahap dicatat dengan batas waktu dan kesepakatan tertulis agar Anda dapat memantau progres dengan tenang.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 relative reveal-item reveal-delay-1">
+                        <span class="font-mono text-3xl font-extrabold text-crimson-500/80 block mb-3">01</span>
+                        <h3 class="text-base font-bold text-white mb-2">Konsultasi & Sepakat Brief</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Diskusikan fitur yang diinginkan via WA atau form. Kami beri rincian harga pasti dan jadwal deadline tanpa biaya tersembunyi.
+                        </p>
+                    </div>
+
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 relative reveal-item reveal-delay-2">
+                        <span class="font-mono text-3xl font-extrabold text-crimson-500/80 block mb-3">02</span>
+                        <h3 class="text-base font-bold text-white mb-2">DP & Mulai Pengerjaan</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Cukup DP 30% - 50% untuk mulai pengerjaan. Kami menyediakan link demo/staging agar Anda bisa melihat kemajuan proyek secara berkala.
+                        </p>
+                    </div>
+
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 relative reveal-item reveal-delay-3">
+                        <span class="font-mono text-3xl font-extrabold text-crimson-500/80 block mb-3">03</span>
+                        <h3 class="text-base font-bold text-white mb-2">Review & Bimbingan Teknis</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Demo hasil akhir. Untuk proyek akademik/skripsi, kami bantu instalasi langsung di laptop Anda + penjelasan alur controller & ERD.
+                        </p>
+                    </div>
+
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 relative reveal-item reveal-delay-4">
+                        <span class="font-mono text-3xl font-extrabold text-crimson-500/80 block mb-3">04</span>
+                        <h3 class="text-base font-bold text-white mb-2">Pelunasan & Garansi 30 Hari</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Penyerahan seluruh file source code dan database. Garansi revisi dan penanganan bug aktif selama 30 hari penuh.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 6. TESTIMONI ASLI ==================== -->
+        <section class="py-16 lg:py-24 border-b border-zinc-800/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-12 reveal-item">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Ulasan Klien</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 tracking-tight">
+                        Apa Kata Mereka yang Sudah Menggunakan Jasa Kami
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between reveal-item reveal-delay-1">
+                        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            "Landing page produk kopi saya selesai cuma dalam 3 hari. Tampilan di HP cepat banget dibuka dan tombol WA-nya langsung otomatis terisi format pesanan. Orderan harian naik drastis."
+                        </p>
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <span class="font-bold text-white text-sm block">Rian Santoso</span>
+                            <span class="text-xs text-zinc-400">Pemilik Usaha Kopi Senja, Sidoarjo</span>
+                        </div>
+                    </div>
+
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between reveal-item reveal-delay-2">
+                        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            "Yang paling ngebantu itu sesi Zoom-nya. Dijelasin detail dari relasi database tabel sampai fungsi controller Laravel-nya. Pas dosen nguji tentang alur CRUD, saya bisa jawab lancar dan dapat nilai A."
+                        </p>
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <span class="font-bold text-white text-sm block">Dimas P.</span>
+                            <span class="text-xs text-zinc-400">Mahasiswa Sistem Informasi, Surabaya</span>
+                        </div>
+                    </div>
+
+                    <div class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between reveal-item reveal-delay-3">
+                        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            "Kodingannya rapi, ada dokumentasi README-nya jelas, dan pas minta revisi kecil di bagian perhitungan ongkir langsung dibenerin di hari yang sama. Sangat profesional."
+                        </p>
+                        <div class="pt-4 border-t border-zinc-800/80">
+                            <span class="font-bold text-white text-sm block">Fitriani Dewi</span>
+                            <span class="text-xs text-zinc-400">Owner Brand Fashion Online, Malang</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 7. FAQ ACCORDION ==================== -->
+        <section id="faq" class="py-16 lg:py-24 border-b border-zinc-800/60 scroll-mt-24 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal-item">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Pertanyaan Umum</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 tracking-tight">
+                        Hal-hal yang Sering Ditanyakan
+                    </h2>
+                    <p class="text-zinc-400 mt-2 text-xs sm:text-sm">
+                        Jawaban transparan seputar kepemilikan kode, metode pembayaran, dan batasan revisi.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <details class="group surface-card rounded-xl p-5 border border-zinc-800 reveal-item reveal-delay-1">
+                        <summary class="flex items-center justify-between cursor-pointer list-none text-sm sm:text-base font-semibold text-white group-open:text-crimson-400">
+                            <span>Apakah seluruh source code menjadi milik saya?</span>
+                            <svg class="w-5 h-5 text-zinc-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3">
+                            Ya, 100%. Setelah pelunasan, kami menyerahkan seluruh source code (ZIP atau repository GitHub), struktur database (.sql), dan panduan instalasi. Anda berhak mengembangkannya di masa mendatang tanpa ikatan lisensi pihak ketiga.
+                        </p>
+                    </details>
+
+                    <details class="group surface-card rounded-xl p-5 border border-zinc-800 reveal-item reveal-delay-2">
+                        <summary class="flex items-center justify-between cursor-pointer list-none text-sm sm:text-base font-semibold text-white group-open:text-crimson-400">
+                            <span>Bagaimana sistem pembayaran dan skema DP?</span>
+                            <svg class="w-5 h-5 text-zinc-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3">
+                            Kami menerapkan sistem DP bertahap (30% - 50%) di awal kesepakatan setelah brief disetujui. Sisa pembayaran hanya dibayarkan setelah Anda memeriksa hasil kerja lewat live demo atau staging dan memastikan program berjalan sesuai brief awal.
+                        </p>
+                    </details>
+
+                    <details class="group surface-card rounded-xl p-5 border border-zinc-800 reveal-item reveal-delay-3">
+                        <summary class="flex items-center justify-between cursor-pointer list-none text-sm sm:text-base font-semibold text-white group-open:text-crimson-400">
+                            <span>Untuk proyek akademik/skripsi, apakah ada pendampingan alur koding?</span>
+                            <svg class="w-5 h-5 text-zinc-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3">
+                            Tentu ada. Kami mengutamakan edukasi dan bimbingan teknis. Tim kami menyediakan sesi konsultasi via Zoom atau AnyDesk untuk membantu setup di laptop Anda serta menjelaskan relasi tabel database, fungsi penting pada controller, hingga logika rumus yang diterapkan agar Anda siap mempresentasikannya di hadapan dosen penguji.
+                        </p>
+                    </details>
+
+                    <details class="group surface-card rounded-xl p-5 border border-zinc-800 reveal-item reveal-delay-4">
+                        <summary class="flex items-center justify-between cursor-pointer list-none text-sm sm:text-base font-semibold text-white group-open:text-crimson-400">
+                            <span>Berapa kali batas revisi dan bagaimana ketentuannya?</span>
+                            <svg class="w-5 h-5 text-zinc-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3">
+                            Kami memberikan garansi revisi bebas biaya hingga 3 kali untuk penyesuaian yang masih berada dalam koridor brief awal (misal: perbaikan bug, penyesuaian tata letak, atau ubah field database). Jika ada penambahan fitur besar di luar brief awal, kami akan diskusikan estimasi biaya tambahannya secara transparan.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider line with red glow gradient -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-crimson-600/40 to-transparent"></div>
+
+        <!-- ==================== 8. FORM PEMESANAN & KONTAK ==================== -->
+        <section id="kontak" class="py-16 lg:py-24 scroll-mt-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left: Contact Details & Office -->
+                    <div class="lg:col-span-5 space-y-6 reveal-item">
+                        <div>
+                            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-crimson-400 px-3 py-1 rounded-full bg-crimson-950/70 border border-crimson-800/50">Hubungi Kami</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 tracking-tight">
+                                Diskusikan Kebutuhan Proyek Anda Hari Ini
+                            </h2>
+                            <p class="text-zinc-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                                Ceritakan ide website atau sistem yang ingin Anda bangun. Tim kami akan memberikan analisis kebutuhan, pilihan teknologi terbaik, dan penawaran transparan.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 pt-2">
+                            <!-- Direct WA Card -->
+                            <div class="surface-card surface-card-interactive p-4 rounded-xl flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400 shrink-0 shadow-md">
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="truncate">
+                                        <span class="text-[11px] font-mono text-zinc-400 block">WhatsApp Fast Response</span>
+                                        <span class="text-sm font-bold text-white">+62 812-3456-7890</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="copy-btn px-3 py-1.5 rounded-lg bg-ink-800 hover:bg-ink-700 text-xs font-mono text-zinc-300 border border-zinc-700 shadow-sm" data-clipboard-text="+6281234567890">
+                                    Salin
+                                </button>
+                            </div>
+
+                            <!-- Email Card -->
+                            <div class="surface-card surface-card-interactive p-4 rounded-xl flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <div class="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700/60 flex items-center justify-center text-zinc-300 shrink-0 shadow-md">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div class="truncate">
+                                        <span class="text-[11px] font-mono text-zinc-400 block">Kirim Proposal & Dokumen</span>
+                                        <span class="text-sm font-bold text-white">halo@crimsondev.id</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="copy-btn px-3 py-1.5 rounded-lg bg-ink-800 hover:bg-ink-700 text-xs font-mono text-zinc-300 border border-zinc-700 shadow-sm" data-clipboard-text="halo@crimsondev.id">
+                                    Salin
+                                </button>
+                            </div>
+
+                            <!-- Studio Location Card -->
+                            <div class="surface-card surface-card-interactive p-4 rounded-xl flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700/60 flex items-center justify-center text-zinc-300 shrink-0 shadow-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-mono text-zinc-400 block">Studio & Operasional</span>
+                                    <span class="text-sm font-semibold text-white">Kec. Sukolilo, Surabaya, Jawa Timur</span>
+                                    <span class="text-xs text-zinc-400 block">Melayani klien di seluruh Indonesia secara daring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form Permintaan Konsultasi (Mimbun Form Container) -->
+                    <div class="lg:col-span-7 reveal-item reveal-delay-2">
+                        <div class="surface-card rounded-2xl p-6 sm:p-8 border border-zinc-700/80 shadow-[0_20px_45px_-10px_rgba(0,0,0,0.9)]">
+                            <h3 class="text-xl font-bold text-white mb-1">Kirim Rincian Kebutuhan Proyek</h3>
+                            <p class="text-xs text-zinc-400 mb-6">Formulir ini akan merangkum brief Anda secara rapi dan menyiapkan draf pesan untuk langsung dikirim ke WhatsApp resmi kami.</p>
+
+                            <form id="order-form" class="space-y-4" novalidate>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="client-name" class="block text-xs font-semibold text-zinc-300 mb-1.5">Nama Lengkap *</label>
+                                        <input type="text" id="client-name" required placeholder="Contoh: Budi Santoso" class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-zinc-500">
+                                    </div>
+                                    <div>
+                                        <label for="client-wa" class="block text-xs font-semibold text-zinc-300 mb-1.5">Nomor WhatsApp Aktif *</label>
+                                        <input type="tel" id="client-wa" required placeholder="Contoh: 08123456789" class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-zinc-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="service-select" class="block text-xs font-semibold text-zinc-300 mb-1.5">Pilihan Paket Layanan *</label>
+                                        <select id="service-select" required class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 focus:border-crimson-500 focus:outline-none text-sm text-white">
+                                            <option value="Landing Page Konversi UMKM">Landing Page Konversi UMKM</option>
+                                            <option value="Web Toko Online / Katalog WA">Web Toko Online / Katalog WA</option>
+                                            <option value="Web App & Pendampingan Skripsi">Web App & Pendampingan Skripsi</option>
+                                            <option value="Company Profile Bisnis">Company Profile Bisnis</option>
+                                            <option value="Perbaikan Bug & Modifikasi Fitur">Perbaikan Bug & Modifikasi Fitur</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="deadline-select" class="block text-xs font-semibold text-zinc-300 mb-1.5">Target Waktu Selesai *</label>
+                                        <select id="deadline-select" required class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 focus:border-crimson-500 focus:outline-none text-sm text-white">
+                                            <option value="Kilat (2 - 3 Hari)">Kilat (2 - 3 Hari Kerja)</option>
+                                            <option value="Reguler (4 - 7 Hari)" selected>Reguler (4 - 7 Hari Kerja)</option>
+                                            <option value="Standar (1 - 2 Minggu)">Standar (1 - 2 Minggu)</option>
+                                            <option value="Fleksibel / Diskusi Dulu">Fleksibel / Diskusi Terlebih Dahulu</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="project-brief" class="block text-xs font-semibold text-zinc-300 mb-1.5">Deskripsi Singkat / Kebutuhan Fitur *</label>
+                                    <textarea id="project-brief" rows="4" required placeholder="Contoh: Butuh landing page jasa service AC di Surabaya dengan tombol WA, atau web sistem informasi rekam medis pakai Laravel..." class="w-full px-3.5 py-2.5 rounded-xl bg-ink-950 border border-zinc-700 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-zinc-500"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-crimson-600 via-red-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 active:bg-crimson-700 transition-all flex items-center justify-center gap-2 text-sm shadow-[0_4px_22px_-4px_rgba(220,38,38,0.55)] border border-crimson-400/30 focus:outline-none focus:ring-2 focus:ring-crimson-400">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                    <span>Lanjut ke Konfirmasi WhatsApp</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-ink-950 border-t border-crimson-900/40 pt-12 pb-8 text-zinc-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-zinc-800/70">
+                
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-lg text-white">CRIMSON<span class="text-crimson-500">DEV</span></span>
+                    </div>
+                    <p class="max-w-sm text-zinc-400 leading-relaxed text-xs">
+                        Studio pengembangan website dan pendampingan koding profesional. Membantu UMKM memiliki etalase digital berkualitas tinggi dan membimbing mahasiswa memahami arsitektur aplikasi secara mendalam.
+                    </p>
+                    <p class="text-[11px] text-zinc-400">
+                        * Layanan akademik berorientasi pada bimbingan teknis, mentoring arsitektur perangkat lunak, dan pemecahan bug sesuai prinsip etika pembelajaran.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white uppercase font-mono text-[11px] tracking-wider mb-3">Tautan Halaman</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#layanan" class="hover:text-white transition-colors">Paket Layanan & Harga</a></li>
+                        <li><a href="#estimator" class="hover:text-white transition-colors">Kalkulator Biaya</a></li>
+                        <li><a href="#portofolio" class="hover:text-white transition-colors">Portofolio Klien</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">Tanya Jawab (FAQ)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white uppercase font-mono text-[11px] tracking-wider mb-3">Ketentuan & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><button type="button" id="btn-open-privacy" class="hover:text-white transition-colors text-left">Kebijakan Privasi Klien</button></li>
+                        <li><button type="button" id="btn-open-terms" class="hover:text-white transition-colors text-left">Syarat & Ketentuan Layanan</button></li>
+                        <li class="pt-2 text-zinc-400">Operasional: Senin - Minggu (08.00 - 23.00 WIB)</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
+                <p>© 2026 CrimsonDev Indonesia. Hak Cipta Dilindungi.</p>
+                <p>Dibangun dengan standar aksesibilitas WCAG & Clean Semantic Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+    <aside aria-label="Aksi Cepat WhatsApp">
+        <a href="https://wa.me/6281234567890?text=Halo%20CrimsonDev,%20saya%20ingin%20tanya%20jasa%20website" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-30 flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-[0_10px_25px_-5px_rgba(16,185,129,0.5)] transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400" aria-label="Chat WhatsApp Admin CrimsonDev">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span class="hidden sm:inline">Tanya di WhatsApp</span>
+        </a>
+    </aside>
+
+    <!-- ==================== ACCESSIBLE NATIVE DIALOGS ==================== -->
+    
+    <!-- 1. Order Summary Native Dialog -->
+    <dialog id="order-dialog" class="surface-card rounded-2xl p-6 sm:p-8 max-w-lg w-[92vw] text-zinc-200 border border-zinc-700 shadow-2xl m-auto">
+        <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-800">
+                <h3 class="text-lg font-bold text-white">Ringkasan Format Pesanan</h3>
+                <button type="button" id="btn-close-order-dialog" aria-label="Tutup jendela ringkasan" class="text-zinc-400 hover:text-white p-1 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <p class="text-xs text-zinc-400">
+                Format pesan di bawah ini siap diteruskan ke WhatsApp resmi CrimsonDev.
+            </p>
+
+            <!-- Safe text rendering via textContent to prevent any XSS -->
+            <pre id="order-dialog-summary" class="p-4 rounded-xl bg-ink-950 border border-zinc-800 text-xs font-mono text-zinc-300 whitespace-pre-wrap leading-relaxed max-h-56 overflow-y-auto"></pre>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-3">
+                <a id="order-dialog-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm text-white bg-emerald-600 hover:bg-emerald-500 transition-colors flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Kirim ke WhatsApp</span>
+                </a>
+                <button type="button" id="order-dialog-copy-btn" class="py-3 px-4 rounded-xl font-semibold text-xs sm:text-sm bg-ink-800 hover:bg-ink-700 text-zinc-300 border border-zinc-700 transition-colors">
+                    Salin Teks Format
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- 2. Privacy Policy Dialog -->
+    <dialog id="privacy-dialog" class="surface-card rounded-2xl p-6 sm:p-8 max-w-xl w-[92vw] text-zinc-200 border border-zinc-700 shadow-2xl m-auto">
+        <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-800">
+                <h3 class="text-lg font-bold text-white">Kebijakan Privasi Klien</h3>
+                <button type="button" id="btn-close-privacy" aria-label="Tutup kebijakan privasi" class="text-zinc-400 hover:text-white p-1 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="text-xs text-zinc-300 space-y-3 leading-relaxed max-h-72 overflow-y-auto pr-2">
+                <p><strong>1. Perlindungan Data Pribadi:</strong> CrimsonDev menjamin kerahasiaan identitas, nomor telepon, dan data usaha klien. Informasi yang Anda bagikan hanya digunakan untuk keperluan pengerjaan dan komunikasi proyek.</p>
+                <p><strong>2. Kepemilikan Source Code:</strong> Seluruh kode sumber, aset desain, dan basis data yang dibangun selama proyek menjadi hak milik penuh klien setelah proses pelunasan selesai.</p>
+                <p><strong>3. Kemitraan Aman:</strong> Kami tidak pernah menjual, menyewakan, atau mendistribusikan data proyek Anda kepada pihak ketiga manapun.</p>
+            </div>
+            <div class="pt-3 border-t border-zinc-800 text-right">
+                <button type="button" id="btn-close-privacy-alt" class="px-5 py-2.5 rounded-xl bg-ink-800 hover:bg-ink-700 text-xs font-semibold text-white">Tutup</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- 3. Terms of Service Dialog -->
+    <dialog id="terms-dialog" class="surface-card rounded-2xl p-6 sm:p-8 max-w-xl w-[92vw] text-zinc-200 border border-zinc-700 shadow-2xl m-auto">
+        <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-800">
+                <h3 class="text-lg font-bold text-white">Syarat & Ketentuan Layanan</h3>
+                <button type="button" id="btn-close-terms" aria-label="Tutup syarat ketentuan" class="text-zinc-400 hover:text-white p-1 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="text-xs text-zinc-300 space-y-3 leading-relaxed max-h-72 overflow-y-auto pr-2">
+                <p><strong>1. Pembayaran & Uang Muka (DP):</strong> Pengerjaan dimulai setelah DP (minimal 30%) disepakati dan dibayarkan. Pelunasan dilakukan setelah uji coba/demo program disetujui klien.</p>
+                <p><strong>2. Batasan Revisi:</strong> Garansi revisi mencakup penyesuaian yang sesuai dengan dokumen brief awal. Penambahan modul baru di luar kesepakatan awal dapat dikenakan penyesuaian biaya.</p>
+                <p><strong>3. Integritas Akademik:</strong> Untuk pemesanan sistem informasi tugas akhir atau skripsi, layanan kami diposisikan sebagai jasa perancangan sistem dan pendampingan teknis (mentoring). Klien tetap bertanggung jawab atas pemahaman ilmiah dan karya tulis laporan masing-masing.</p>
+            </div>
+            <div class="pt-3 border-t border-zinc-800 text-right">
+                <button type="button" id="btn-close-terms-alt" class="px-5 py-2.5 rounded-xl bg-ink-800 hover:bg-ink-700 text-xs font-semibold text-white">Tutup</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- ==================== ACCESSIBLE TOAST STATUS ==================== -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-6 z-50 hidden items-center gap-3 px-4 py-3 rounded-xl bg-ink-800 border border-zinc-700 text-white shadow-2xl transition-opacity">
+        <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <span id="toast-message" class="text-xs font-medium">Berhasil</span>
+    </div>
+
+    <!-- ==================== MAIN JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const OFFICIAL_WA_NUMBER = '6281234567890';
+
+            // --- 1. Scroll Reveal Intersection Observer ---
+            const revealItems = document.querySelectorAll('.reveal-item');
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.12
+                };
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealItems.forEach(el => observer.observe(el));
+            } else {
+                revealItems.forEach(el => el.classList.add('is-revealed'));
+            }
+
+            // --- 2. Service Mapping Table for Explicit Non-String Selection ---
+            const serviceKeyMap = {
+                'landing-page': 'Landing Page Konversi UMKM',
+                'ecommerce': 'Web Toko Online / Katalog WA',
+                'webapp-skripsi': 'Web App & Pendampingan Skripsi',
+                'company-profile': 'Company Profile Bisnis',
+                'fix-bug': 'Perbaikan Bug & Modifikasi Fitur'
+            };
+
+            document.querySelectorAll('[data-service-trigger]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const key = btn.getAttribute('data-service-trigger');
+                    const targetOptionValue = serviceKeyMap[key];
+                    const selectEl = document.getElementById('service-select');
+                    
+                    if (selectEl && targetOptionValue) {
+                        selectEl.value = targetOptionValue;
+                    }
+
+                    const kontakSection = document.getElementById('kontak');
+                    if (kontakSection) {
+                        kontakSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    showToast(`Paket "${targetOptionValue}" telah dipilih.`);
+                });
+            });
+
+            // --- 3. Interactive Price Estimator Engine ---
+            const estType = document.getElementById('est-type');
+            const estPages = document.getElementById('est-pages');
+            const estAddonDomain = document.getElementById('est-addon-domain');
+            const estAddonMentor = document.getElementById('est-addon-mentor');
+            const estAddonPayment = document.getElementById('est-addon-payment');
+            const estTotalDisplay = document.getElementById('est-total-display');
+            const estDurationDisplay = document.getElementById('est-duration-display');
+            const estSummaryText = document.getElementById('est-summary-text');
+            const estWaBtn = document.getElementById('est-wa-btn');
+
+            function formatRupiah(num) {
+                return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            function updateEstimator() {
+                if (!estType || !estPages) return;
+
+                const basePrice = parseInt(estType.value, 10) || 0;
+                const pagesPrice = parseInt(estPages.value, 10) || 0;
+                const domainPrice = estAddonDomain.checked ? parseInt(estAddonDomain.value, 10) : 0;
+                const mentorPrice = estAddonMentor.checked ? parseInt(estAddonMentor.value, 10) : 0;
+                const paymentPrice = estAddonPayment.checked ? parseInt(estAddonPayment.value, 10) : 0;
+
+                const total = basePrice + pagesPrice + domainPrice + mentorPrice + paymentPrice;
+                estTotalDisplay.textContent = formatRupiah(total);
+
+                let duration = '2 - 4 Hari Kerja';
+                if (total > 1500000 || basePrice >= 1200000) {
+                    duration = '7 - 14 Hari Kerja';
+                } else if (total > 800000) {
+                    duration = '4 - 7 Hari Kerja';
+                }
+                estDurationDisplay.textContent = duration;
+
+                const selectedTypeLabel = estType.options[estType.selectedIndex].getAttribute('data-label');
+                const selectedPagesLabel = estPages.options[estPages.selectedIndex].getAttribute('data-label');
+                
+                let summaryLines = [
+                    `• Paket: ${selectedTypeLabel}`,
+                    `• Cakupan: ${selectedPagesLabel}`
+                ];
+                if (estAddonDomain.checked) summaryLines.push('• + Domain .com & Cloud Hosting');
+                if (estAddonMentor.checked) summaryLines.push('• + Sesi Bimbingan Zoom 1-on-1');
+                if (estAddonPayment.checked) summaryLines.push('• + Payment Gateway / QRIS');
+
+                estSummaryText.textContent = summaryLines.join('\n');
+
+                const waMessage = `Halo Admin CrimsonDev, saya telah menghitung estimasi kebutuhan website melalui kalkulator web Anda:\n\n` +
+                    `${summaryLines.join('\n')}\n` +
+                    `• Estimasi Total: ${formatRupiah(total)}\n` +
+                    `• Estimasi Waktu: ${duration}\n\n` +
+                    `Mohon info ketersediaan slot pengerjaan dan detail konsultasinya. Terima kasih!`;
+
+                estWaBtn.href = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+            }
+
+            [estType, estPages, estAddonDomain, estAddonMentor, estAddonPayment].forEach(el => {
+                if (el) el.addEventListener('change', updateEstimator);
+            });
+            updateEstimator();
+
+            // --- 4. Order Form Submission (XSS-safe, native <dialog>) ---
+            const orderForm = document.getElementById('order-form');
+            const orderDialog = document.getElementById('order-dialog');
+            const orderDialogSummary = document.getElementById('order-dialog-summary');
+            const orderDialogWaLink = document.getElementById('order-dialog-wa-link');
+            const orderDialogCopyBtn = document.getElementById('order-dialog-copy-btn');
+            const btnCloseOrderDialog = document.getElementById('btn-close-order-dialog');
+
+            let currentOrderMessage = '';
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const nameInput = document.getElementById('client-name');
+                    const waInput = document.getElementById('client-wa');
+                    const serviceInput = document.getElementById('service-select');
+                    const deadlineInput = document.getElementById('deadline-select');
+                    const briefInput = document.getElementById('project-brief');
+
+                    const name = nameInput.value.trim();
+                    const wa = waInput.value.trim();
+                    const service = serviceInput.value;
+                    const deadline = deadlineInput.value;
+                    const brief = briefInput.value.trim();
+
+                    if (!name || !wa || !brief) {
+                        showToast('Harap lengkapi semua kolom bertanda bintang.');
+                        return;
+                    }
+
+                    currentOrderMessage = `Halo Admin CrimsonDev, saya ingin konsultasi dan pesan jasa pembuatan website:\n\n` +
+                        `• Nama Klien: ${name}\n` +
+                        `• Kontak WhatsApp: ${wa}\n` +
+                        `• Paket Layanan: ${service}\n` +
+                        `• Target Deadline: ${deadline}\n` +
+                        `• Kebutuhan / Brief: ${brief}`;
+
+                    orderDialogSummary.textContent = currentOrderMessage;
+                    orderDialogWaLink.href = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(currentOrderMessage)}`;
+
+                    if (orderDialog && typeof orderDialog.showModal === 'function') {
+                        orderDialog.showModal();
+                    }
+                });
+            }
+
+            if (btnCloseOrderDialog) {
+                btnCloseOrderDialog.addEventListener('click', () => {
+                    orderDialog.close();
+                });
+            }
+
+            if (orderDialogCopyBtn) {
+                orderDialogCopyBtn.addEventListener('click', () => {
+                    if (currentOrderMessage) {
+                        copyTextToClipboard(currentOrderMessage, 'Format Pesanan');
+                    }
+                });
+            }
+
+            [orderDialog, document.getElementById('privacy-dialog'), document.getElementById('terms-dialog')].forEach(dlg => {
+                if (dlg) {
+                    dlg.addEventListener('click', (e) => {
+                        const rect = dlg.getBoundingClientRect();
+                        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+                            rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+                        if (!isInDialog) {
+                            dlg.close();
+                        }
+                    });
+                }
+            });
+
+            // --- 5. Privacy & Terms Modals ---
+            const privacyDialog = document.getElementById('privacy-dialog');
+            const termsDialog = document.getElementById('terms-dialog');
+
+            const btnOpenPrivacy = document.getElementById('btn-open-privacy');
+            const btnClosePrivacy = document.getElementById('btn-close-privacy');
+            const btnClosePrivacyAlt = document.getElementById('btn-close-privacy-alt');
+
+            const btnOpenTerms = document.getElementById('btn-open-terms');
+            const btnCloseTerms = document.getElementById('btn-close-terms');
+            const btnCloseTermsAlt = document.getElementById('btn-close-terms-alt');
+
+            if (btnOpenPrivacy && privacyDialog) {
+                btnOpenPrivacy.addEventListener('click', () => privacyDialog.showModal());
+            }
+            if (btnClosePrivacy && privacyDialog) {
+                btnClosePrivacy.addEventListener('click', () => privacyDialog.close());
+            }
+            if (btnClosePrivacyAlt && privacyDialog) {
+                btnClosePrivacyAlt.addEventListener('click', () => privacyDialog.close());
+            }
+
+            if (btnOpenTerms && termsDialog) {
+                btnOpenTerms.addEventListener('click', () => termsDialog.showModal());
+            }
+            if (btnCloseTerms && termsDialog) {
+                btnCloseTerms.addEventListener('click', () => termsDialog.close());
+            }
+            if (btnCloseTermsAlt && termsDialog) {
+                btnCloseTermsAlt.addEventListener('click', () => termsDialog.close());
+            }
+
+            // --- 6. Clipboard Copy Utility ---
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.getAttribute('data-clipboard-text');
+                    if (text) {
+                        copyTextToClipboard(text, 'Teks');
+                    }
+                });
+            });
+
+            function copyTextToClipboard(text, label = 'Teks') {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showToast(`${label} berhasil disalin ke clipboard!`);
+                    }).catch(() => {
+                        fallbackCopyText(text, label);
+                    });
+                } else {
+                    fallbackCopyText(text, label);
+                }
+            }
+
+            function fallbackCopyText(text, label) {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast(`${label} berhasil disalin!`);
+                } catch (err) {
+                    showToast('Gagal menyalin secara otomatis.');
+                }
+                document.body.removeChild(textArea);
+            }
+
+            // --- 7. Accessible Toast Notification System ---
+            let toastTimer;
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-message');
+                if (!toast || !toastMsg) return;
+
+                toastMsg.textContent = message;
+                toast.classList.remove('hidden');
+                toast.classList.add('flex');
+
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex');
+                }, 3500);
+            }
+
+            // --- 8. Mobile Navigation Toggle ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                });
+
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        iconOpen.classList.remove('hidden');
+                        iconClose.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
