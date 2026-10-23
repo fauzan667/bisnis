@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimsonDev - Jasa Joki & Pembuatan Website Premium</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        crimson: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            400: '#fb7185',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        },
+                        obsidian: {
+                            950: '#050507',
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050507; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #dc2626, #7f1d1d);
+            border-radius: 4px;
+        }
+
+        body {
+            background-color: #050507;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Transitions for Scroll-Driven Hero Elements */
+        .hero-icon-item {
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, box-shadow 0.4s ease;
+            will-change: transform;
+        }
+
+        .phone-mockup-shell {
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
+            will-change: transform;
+        }
+
+        .hero-side-copy {
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Glowing Crimson Effects */
+        .crimson-glow {
+            box-shadow: 0 0 35px -5px rgba(220, 38, 38, 0.45);
+        }
+        .crimson-border-glow {
+            border: 1px solid rgba(239, 68, 68, 0.28);
+            background: linear-gradient(160deg, rgba(24, 24, 32, 0.9) 0%, rgba(10, 10, 14, 0.96) 100%);
+        }
+        .crimson-border-glow:hover {
+            border-color: rgba(239, 68, 68, 0.75);
+            box-shadow: 0 15px 40px -10px rgba(220, 38, 38, 0.35);
+        }
+
+        /* Bento Step Pulse */
+        @keyframes stepPulse {
+            0%, 100% { border-color: rgba(239, 68, 68, 0.2); background-color: rgba(20, 20, 28, 0.7); }
+            50% { border-color: rgba(239, 68, 68, 0.9); background-color: rgba(127, 29, 29, 0.35); transform: translateX(6px); }
+        }
+        .step-anim-1 { animation: stepPulse 4.5s infinite 0s; }
+        .step-anim-2 { animation: stepPulse 4.5s infinite 1.5s; }
+        .step-anim-3 { animation: stepPulse 4.5s infinite 3s; }
+
+        /* Vertical Ticker inside Bento Card */
+        @keyframes verticalMarquee {
+            0% { transform: translateY(0%); }
+            100% { transform: translateY(-50%); }
+        }
+        .animate-vertical-marquee {
+            animation: verticalMarquee 12s linear infinite;
+        }
+        .animate-vertical-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Avatar Radial Ring Expansion */
+        .avatar-node {
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            will-change: transform;
+        }
+
+        /* Emerging Service Badges from behind Phone */
+        .service-wing-left {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+        }
+        .service-wing-right {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+        }
+
+        /* Animated Ribbon SVG Stroke */
+        @keyframes ribbonFlow {
+            0% { stroke-dashoffset: 1600; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -1600; }
+        }
+        .ribbon-path-animated {
+            stroke-dasharray: 1600;
+            animation: ribbonFlow 14s ease-in-out infinite;
+        }
+
+        /* Reveal on Scroll Base */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-crimson-600 selection:text-white">
+
+    <!-- ==================== STICKY NAVBAR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/80 backdrop-blur-xl border-b border-crimson-900/30 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson-500 to-crimson-900 flex items-center justify-center text-white font-bold text-lg crimson-glow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">JokiWeb<span class="text-crimson-500">.id</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest text-gray-400 -mt-1">Premium Web & Coding</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu (5 Required Sections) -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-obsidian-900/90 p-1.5 rounded-full border border-white/10">
+                <a href="#home" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium bg-crimson-600 text-white transition-all">Home</a>
+                <a href="#tentang" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Tentang Kami</a>
+                <a href="#layanan" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Layanan</a>
+                <a href="#blog" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Blog</a>
+                <a href="#kontak" class="nav-pill px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium text-gray-300 hover:text-white transition-all">Kontak</a>
+            </nav>
+
+            <!-- Pill CTA Button (Like Video Top Right) -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#kontak" onclick="prefillOrder('Konsultasi Cepat Express')" class="px-5 py-2.5 rounded-full font-semibold text-xs lg:text-sm text-white bg-gradient-to-r from-crimson-600 via-crimson-700 to-crimson-950 hover:from-crimson-500 hover:to-crimson-800 border border-crimson-400/40 crimson-glow transition-all flex items-center gap-2">
+                    <span>Pesan Sekarang</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-btn" aria-label="Menu" class="md:hidden p-2.5 rounded-xl bg-obsidian-800 text-gray-200 border border-crimson-800/50">
+                <i id="mobile-icon" class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-obsidian-900/95 backdrop-blur-xl border-b border-crimson-900/40 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-crimson-600/20 border border-crimson-500/30">Home</a>
+            <a href="#tentang" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Tentang Kami</a>
+            <a href="#layanan" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Layanan</a>
+            <a href="#blog" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Blog</a>
+            <a href="#kontak" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5">Kontak</a>
+            <a href="#kontak" class="mobile-nav-link block w-full text-center py-3 mt-2 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-crimson-600 to-crimson-900 crimson-glow">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <!-- ==================== 1. HOME: SCROLL-DRIVEN CONVERGENCE HERO (Video 0:00 - 0:04) ==================== -->
+    <section id="home" class="relative pt-24 pb-16 lg:pt-28 lg:pb-24 overflow-hidden transition-colors duration-700" style="min-height: 105vh;">
+        <!-- Dynamic Background Glow that intensifies when converged -->
+        <div id="hero-dynamic-bg" class="absolute inset-0 pointer-events-none transition-opacity duration-700 opacity-30"
+             style="background: radial-gradient(circle at 50% 60%, rgba(220, 38, 38, 0.45) 0%, rgba(127, 29, 29, 0.2) 45%, rgba(5, 5, 7, 1) 85%);">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
+            
+            <!-- Interactive Demo Toggle Bar (Allows instant preview of the TikTok animation or automatic on scroll) -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian-900/90 border border-crimson-500/40 text-xs text-gray-300 mb-6 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-crimson-500 animate-ping"></span>
+                <span>Promo Mahasiswa & UMKM • Scroll ke bawah atau klik:</span>
+                <button onclick="toggleHeroConvergence()" id="hero-state-btn" class="ml-1 px-2.5 py-0.5 rounded-full bg-crimson-600 hover:bg-crimson-500 text-white font-semibold transition-all">
+                    Simulasi Animasi Masuk HP
+                </button>
+            </div>
+
+            <!-- Hero Headline (Fades/scales subtly when phone rises) -->
+            <div id="hero-headline-box" class="text-center max-w-3xl mx-auto transition-all duration-700">
+                <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-white">
+                    Bereskan Tugas Coding <br class="hidden sm:inline" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-red-800">&amp; Website Impianmu</span>
+                </h1>
+                <p class="text-gray-400 text-sm sm:text-base mt-4 max-w-xl mx-auto">
+                    Jasa joki pembuatan website tugas kuliah, skripsi, landing page UMKM, hingga toko online. Terima beres, kode rapi, dan garansi revisi sampai ACC!
+                </p>
+                <div class="mt-6 flex items-center justify-center gap-3">
+                    <a href="#layanan" class="px-7 py-3 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-crimson-600 to-crimson-900 hover:from-crimson-500 hover:to-crimson-700 border border-crimson-400/40 crimson-glow transition-all">
+                        Mulai Order Sekarang
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Stage: Floating Icons + Center Phone Mockup + Side Texts -->
+            <div class="relative w-full max-w-6xl mt-6 sm:mt-10 flex items-center justify-center min-h-[470px] sm:min-h-[520px]">
+                
+                <!-- Left Side Text (Appears when Phone Converges - Video 0:03) -->
+                <div id="hero-left-copy" class="hero-side-copy hidden lg:block w-1/3 pr-8 opacity-0 -translate-x-10 pointer-events-none">
+                    <span class="text-xs font-bold uppercase tracking-widest text-crimson-400">Partner Coding Terbaik</span>
+                    <h2 class="font-display font-bold text-3xl xl:text-4xl text-white mt-2 leading-tight">
+                        Gerbang Menuju Nilai A+ &amp; Bisnis Digital
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+                        Tidak perlu begadang semalaman karena error merah di terminal. Tim developer kami siap mengeksekusi website Anda dengan cepat.
+                    </p>
+                </div>
+
+                <!-- Floating Tech Icons Stage (Scattered initially -> Fly into Phone on scroll/toggle) -->
+                <div id="floating-icons-stage" class="absolute inset-0 pointer-events-none flex items-center justify-center z-20">
+                    <!-- Icon 1: Laravel -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-crimson-600 to-obsidian-900 border border-crimson-400/50 flex flex-col items-center justify-center text-white shadow-2xl crimson-glow"
+                         data-scatter-x="-260" data-scatter-y="-150" data-scatter-r="-15"
+                         data-phone-x="-55" data-phone-y="-70" data-phone-r="-8" data-phone-scale="0.78">
+                        <i class="fa-brands fa-laravel text-2xl"></i>
+                        <span class="text-[9px] font-bold mt-0.5">Laravel</span>
+                    </div>
+                    <!-- Icon 2: React -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-obsidian-800 to-black border border-cyan-500/40 flex flex-col items-center justify-center text-cyan-400 shadow-2xl"
+                         data-scatter-x="265" data-scatter-y="-140" data-scatter-r="18"
+                         data-phone-x="55" data-phone-y="-65" data-phone-r="10" data-phone-scale="0.78">
+                        <i class="fa-brands fa-react text-2xl"></i>
+                        <span class="text-[9px] font-bold mt-0.5 text-gray-200">React</span>
+                    </div>
+                    <!-- Icon 3: HTML5 & Tailwind -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-crimson-700 to-black border border-orange-500/40 flex flex-col items-center justify-center text-orange-400 shadow-2xl"
+                         data-scatter-x="-320" data-scatter-y="10" data-scatter-r="12"
+                         data-phone-x="-50" data-phone-y="5" data-phone-r="6" data-phone-scale="0.78">
+                        <i class="fa-brands fa-html5 text-2xl"></i>
+                        <span class="text-[9px] font-bold mt-0.5 text-gray-200">HTML5</span>
+                    </div>
+                    <!-- Icon 4: JavaScript / Node -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-obsidian-800 to-black border border-yellow-500/40 flex flex-col items-center justify-center text-yellow-400 shadow-2xl"
+                         data-scatter-x="320" data-scatter-y="20" data-scatter-r="-14"
+                         data-phone-x="50" data-phone-y="10" data-phone-r="-8" data-phone-scale="0.78">
+                        <i class="fa-brands fa-js text-2xl"></i>
+                        <span class="text-[9px] font-bold mt-0.5 text-gray-200">Next/JS</span>
+                    </div>
+                    <!-- Icon 5: Database MySQL -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-crimson-800 to-obsidian-950 border border-crimson-400/50 flex flex-col items-center justify-center text-crimson-300 shadow-2xl"
+                         data-scatter-x="-210" data-scatter-y="145" data-scatter-r="-20"
+                         data-phone-x="-42" data-phone-y="75" data-phone-r="-12" data-phone-scale="0.75">
+                        <i class="fa-solid fa-database text-xl"></i>
+                        <span class="text-[9px] font-bold mt-0.5 text-white">MySQL</span>
+                    </div>
+                    <!-- Icon 6: Python / AI Web -->
+                    <div class="hero-icon-item w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-obsidian-800 to-crimson-950 border border-crimson-500/40 flex flex-col items-center justify-center text-white shadow-2xl"
+                         data-scatter-x="220" data-scatter-y="140" data-scatter-r="16"
+                         data-phone-x="45" data-phone-y="75" data-phone-r="12" data-phone-scale="0.75">
+                        <i class="fa-brands fa-python text-2xl text-crimson-400"></i>
+                        <span class="text-[9px] font-bold mt-0.5">Python</span>
+                    </div>
+                </div>
+
+                <!-- Center Smartphone Mockup (Rises up on scroll/toggle) -->
+                <div id="hero-phone" class="phone-mockup-shell relative z-10 w-[270px] sm:w-[295px] h-[470px] sm:h-[500px] rounded-[44px] p-3 bg-gradient-to-b from-crimson-500/40 via-obsidian-800 to-black border-[3px] border-crimson-500/50 shadow-2xl flex flex-col justify-between">
+                    <!-- Inner Screen -->
+                    <div id="phone-inner-screen" class="w-full h-full rounded-[34px] bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-crimson-950/60 border border-white/10 p-5 flex flex-col justify-between relative overflow-hidden transition-colors duration-500">
+                        <!-- Top Notch / Dynamic Island -->
+                        <div class="flex items-center justify-between text-[11px] text-gray-400">
+                            <span class="font-semibold text-white">9:41</span>
+                            <div class="w-20 h-5 rounded-full bg-black border border-crimson-500/30 flex items-center justify-center">
+                                <span class="w-2 h-2 rounded-full bg-crimson-500 mr-1.5"></span>
+                                <span class="text-[8px] text-gray-400">LIVE</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-[10px]">
+                                <i class="fa-solid fa-signal"></i>
+                                <i class="fa-solid fa-battery-full text-crimson-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- App Header inside Phone -->
+                        <div class="text-center mt-1">
+                            <span class="text-xs font-display font-bold text-white"><i class="fa-solid fa-bolt text-crimson-500 mr-1"></i>JokiWeb.id</span>
+                        </div>
+
+                        <!-- Middle Drop Zone where floating icons land -->
+                        <div class="my-auto py-8 flex flex-col items-center justify-center text-center relative">
+                            <div class="w-36 h-36 rounded-full bg-crimson-600/15 blur-2xl absolute"></div>
+                            <p id="phone-hint-text" class="text-[11px] text-gray-400 uppercase tracking-widest opacity-60">Tech Stack Ready</p>
+                        </div>
+
+                        <!-- Bottom Action Card inside Phone (Like "Start Course" in Video 0:03) -->
+                        <div class="relative z-30 bg-obsidian-900/90 backdrop-blur-md border border-crimson-500/30 rounded-2xl p-4 text-center space-y-2.5">
+                            <div class="text-xs text-crimson-400 font-semibold">100% Source Code &amp; Database</div>
+                            <div class="font-display font-bold text-base text-white leading-snug">Order Proyek Website</div>
+                            <div class="w-full bg-obsidian-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-crimson-500 to-red-400 w-4/5 h-full rounded-full"></div>
+                            </div>
+                            <a href="#kontak" onclick="prefillOrder('Order dari Mockup Hero')" class="block w-full py-2 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 transition-all">
+                                Konsultasi Gratis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Text (Appears when Phone Converges - Video 0:03) -->
+                <div id="hero-right-copy" class="hero-side-copy hidden lg:block w-1/3 pl-8 opacity-0 translate-x-10 pointer-events-none">
+                    <div class="p-5 rounded-2xl crimson-border-glow space-y-2">
+                        <div class="flex items-center gap-2 text-crimson-400 text-xs font-bold">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Garansi Pasti Jalan &amp; Revisi</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Pengerjaan website tidak hanya menghasilkan tampilan mewah, tapi juga <strong>source code rapi</strong>, bebas bug, serta bimbingan instalasi via Zoom/AnyDesk.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Theme Glow Switcher Pill under Phone (Replicating the Sun/Moon toggle in Video 0:03) -->
+            <div class="mt-6 flex items-center gap-3 bg-obsidian-900 border border-crimson-500/40 p-1.5 rounded-full shadow-lg">
+                <button onclick="setPhoneGlowMode('obsidian')" id="mode-obsidian-btn" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white flex items-center gap-1.5 transition-all">
+                    <i class="fa-solid fa-moon"></i> Dark Obsidian
+                </button>
+                <button onclick="setPhoneGlowMode('crimson')" id="mode-crimson-btn" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-gray-400 hover:text-white flex items-center gap-1.5 transition-all">
+                    <i class="fa-solid fa-fire"></i> Crimson Overdrive
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 2. TENTANG KAMI: BENTO GRID "HOW IT WORKS" (Video 0:05 - 0:08) ==================== -->
+    <section id="tentang" class="relative py-20 lg:py-28 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950 border-t border-crimson-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Heading -->
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Tentang Kami &amp; Cara Kerja</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Bagaimana <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-red-600">JokiWeb.id</span> Bekerja
+                </h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">
+                    Transparan, terstruktur, dan dikerjakan langsung oleh tim Software Engineer berpengalaman di bidang akademik maupun industri.
+                </p>
+            </div>
+
+            <!-- Bento Grid Container (Exact Layout from Video 0:05 - 0:08) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                
+                <!-- Card 1: Alur Pemesanan Mudah (Top Left - 4 cols) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Alur Cepat</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-1">3 Langkah Terima Beres</h3>
+                        <p class="text-xs text-gray-400 mt-1">Cocok untuk yang dikejar deadline mepet.</p>
+                    </div>
+
+                    <div class="space-y-2.5 mt-6">
+                        <div class="step-anim-1 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-600 text-white flex items-center justify-center font-bold text-xs">1</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Kirim Brief / Modul Tugas</div>
+                                <div class="text-[11px] text-gray-400">Via WhatsApp &amp; sepakati harga</div>
+                            </div>
+                        </div>
+                        <div class="step-anim-2 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-700 text-white flex items-center justify-center font-bold text-xs">2</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Proses Coding &amp; Live Demo</div>
+                                <div class="text-[11px] text-gray-400">Pantau progress secara langsung</div>
+                            </div>
+                        </div>
+                        <div class="step-anim-3 p-3 rounded-2xl border border-crimson-500/30 flex items-center gap-3 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-crimson-800 text-white flex items-center justify-center font-bold text-xs">3</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Serah Terima &amp; Bimbingan</div>
+                                <div class="text-[11px] text-gray-400">Gratis pasang di laptop sampai jalan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tim Developer & Komunitas Klien (Top Middle - 4 cols) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div class="flex items-center -space-x-3 pt-2">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-crimson-600 to-red-400 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">AR</div>
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-obsidian-700 to-crimson-700 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">DN</div>
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-800 to-crimson-500 border-2 border-obsidian-900 flex items-center justify-center font-bold text-white text-sm">FK</div>
+                        <div class="w-12 h-12 rounded-full bg-crimson-950 border-2 border-crimson-500/50 flex items-center justify-center font-bold text-crimson-300 text-xs">+15 Dev</div>
+                    </div>
+
+                    <div class="my-6">
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-[11px] font-semibold mb-2">
+                            <i class="fa-solid fa-user-shield"></i> Privasi Klien 100% Rahasia
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white">Tim Spesialis Akademik &amp; UMKM</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Kami bukan sekadar pembuat kode, tapi mentor teknis Anda. Setiap baris kode diberi komentar penjelasan agar Anda siap menghadapi sidang dosen atau presentasi klien.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/10 text-center">
+                        <div class="p-2 rounded-xl bg-obsidian-950/70">
+                            <div class="font-display font-bold text-lg text-crimson-400">520+</div>
+                            <div class="text-[10px] text-gray-400">Project Tuntas</div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-obsidian-950/70">
+                            <div class="font-display font-bold text-lg text-crimson-400">99.4%</div>
+                            <div class="text-[10px] text-gray-400">Lulus Sidang / Puas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Tall Right Tech Stack Matrix (Right - 4 cols, 2 rows tall like Video 0:06) -->
+                <div class="md:col-span-4 md:row-span-2 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Full-Stack Mastery</span>
+                        <h3 class="font-display font-bold text-2xl text-white mt-1">Bebas Request Bahasa &amp; Framework</h3>
+                        <p class="text-xs text-gray-400 mt-1">Pilih stack sesuai silabus kampus atau standar industri terbaru.</p>
+                    </div>
+
+                    <!-- 3x4 Glowing App Icons Grid -->
+                    <div class="grid grid-cols-3 gap-3 my-6">
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-laravel text-2xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Laravel 11</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-react text-2xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">React.js</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-vuejs text-2xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Vue / Nuxt</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-php text-2xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">PHP Native</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-node-js text-2xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Node / Express</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-python text-2xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Flask / Django</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-wordpress text-2xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">WordPress</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-solid fa-fire text-2xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">CodeIgniter 4</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-solid fa-wind text-2xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Tailwind CSS</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-solid fa-database text-2xl text-crimson-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">MySQL / SQL</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-brands fa-figma text-2xl text-pink-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Slicing Figma</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-crimson-500/30 hover:border-crimson-400 flex flex-col items-center justify-center gap-1.5 group transition-all hover:-translate-y-1">
+                            <i class="fa-solid fa-server text-2xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] text-gray-300 font-medium">Deploy Hosting</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-400 border-t border-white/10 pt-3">
+                        Eksplorasi puluhan teknologi modern yang dikelompokkan sesuai kebutuhan tugas maupun skala bisnis Anda.
+                    </p>
+                </div>
+
+                <!-- Card 4: Scrolling Feature Guarantee Ticker (Middle Left - 8 cols wide like Video 0:06) -->
+                <div class="md:col-span-8 rounded-3xl p-6 crimson-border-glow grid grid-cols-1 sm:grid-cols-2 gap-6 items-center reveal-up">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Standar Kualitas</span>
+                        <h3 class="font-display font-bold text-2xl text-white mt-1">Fitur Lengkap Sesuai Permintaanmu</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Setiap project dilengkapi dokumentasi, relasi tabel database (ERD), dan tampilan responsif di layar HP maupun laptop.
+                        </p>
+                    </div>
+
+                    <!-- Vertical Scrolling Ticker Box -->
+                    <div class="h-40 overflow-hidden relative rounded-2xl bg-obsidian-950 border border-crimson-500/20 p-3">
+                        <div class="animate-vertical-marquee space-y-2.5">
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-check-circle text-crimson-500"></i> Clean Code &amp; Mudah Dipelajari
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-bolt text-yellow-400"></i> Layanan Express Selesai 24 Jam
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-diagram-project text-crimson-400"></i> Bonus ERD, Flowchart &amp; SQL File
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-headset text-green-400"></i> Bimbingan Sampai Lulus Sidang
+                            </div>
+                            <!-- Duplicate for seamless loop -->
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-check-circle text-crimson-500"></i> Clean Code &amp; Mudah Dipelajari
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-white/5 flex items-center gap-3 text-xs font-semibold text-white">
+                                <i class="fa-solid fa-bolt text-yellow-400"></i> Layanan Express Selesai 24 Jam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Bottom Left Mini App Preview (4 cols - Video 0:08) -->
+                <div class="md:col-span-4 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div>
+                        <h3 class="font-display font-bold text-xl text-white">Gratis Deploy &amp; Setup</h3>
+                        <p class="text-xs text-gray-400 mt-1">Bisa dijalankan di localhost (XAMPP/Laragon) atau langsung online.</p>
+                    </div>
+                    <div class="mt-5 p-4 rounded-2xl bg-gradient-to-b from-crimson-950/60 to-obsidian-950 border border-crimson-500/30 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600 flex items-center justify-center text-white">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-white">AnyDesk / Zoom Ready</div>
+                                <div class="text-[10px] text-crimson-300">Dibantu pasang sampai jalan</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Card 6: Interactive Topic Tag Cloud (Bottom Right - 8 cols like "Choose Only Topics" in Video 0:08) -->
+                <div class="md:col-span-8 rounded-3xl p-6 crimson-border-glow flex flex-col justify-between reveal-up">
+                    <div class="flex flex-wrap gap-2 mb-4" id="topic-pills-container">
+                        <button onclick="toggleTopicPill(this, 'Web Tugas Kuliah')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Web Tugas Kuliah</button>
+                        <button onclick="toggleTopicPill(this, 'Skripsi SPK (SAW/AHP/TOPSIS)')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Skripsi SPK (SAW/AHP)</button>
+                        <button onclick="toggleTopicPill(this, 'Landing Page UMKM')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Landing Page UMKM</button>
+                        <button onclick="toggleTopicPill(this, 'Toko Online Payment Gateway')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Toko Online Midtrans</button>
+                        <button onclick="toggleTopicPill(this, 'Company Profile Instansi')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Company Profile</button>
+                        <button onclick="toggleTopicPill(this, 'Sistem Kasir / POS')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all">✓ Sistem Kasir / POS</button>
+                        <button onclick="toggleTopicPill(this, 'Fix Error & Tambah Fitur')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Fix Bug &amp; Error</button>
+                        <button onclick="toggleTopicPill(this, 'Slicing UI Figma ke Code')" class="topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all">+ Slicing Figma ke HTML/React</button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-3 border-t border-white/10">
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white">Pilih Topik Project Sesuai Kebutuhanmu</h4>
+                            <p class="text-xs text-gray-400">Klik tag di atas untuk memilih topik dan langsung konsultasikan ke tim kami.</p>
+                        </div>
+                        <a href="#kontak" class="shrink-0 px-4 py-2 rounded-xl bg-crimson-600/20 border border-crimson-500/40 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs font-bold transition-all">
+                            Konsultasikan Topik →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. LAYANAN: EXPANDING AVATAR RING + PHONE WINGS (Video 0:09 - 0:12) ==================== -->
+    <section id="layanan" class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-obsidian-950 via-crimson-950/25 to-obsidian-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- PART A: Expanding Avatar Circle ("Join Our Community" in Video 0:09 - 0:10) -->
+            <div id="avatar-ring-section" class="relative min-h-[380px] sm:min-h-[430px] flex flex-col items-center justify-center text-center mb-20 rounded-3xl bg-gradient-to-b from-crimson-950/30 via-obsidian-900/80 to-obsidian-950 border border-crimson-500/30 p-6 overflow-hidden">
+                
+                <!-- Floating Avatar Nodes (Clustered in center initially -> Expand outward on scroll/click) -->
+                <div id="avatar-ring-stage" class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-crimson-500 to-crimson-900 border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-270" data-ry="-120">
+                        <span>Mhs IT</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-obsidian-700 to-crimson-700 border-2 border-crimson-400 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="270" data-ry="-115">
+                        <span>UMKM</span>
+                    </div>
+                    <div class="avatar-node w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-gradient-to-br from-red-600 to-black border-2 border-white/70 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-320" data-ry="25">
+                        <span>Skripsi</span>
+                    </div>
+                    <div class="avatar-node w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-gradient-to-br from-crimson-700 to-obsidian-900 border-2 border-crimson-300 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="320" data-ry="30">
+                        <span>Startup</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-crimson-500 to-black border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="-200" data-ry="135">
+                        <span>SMK/TI</span>
+                    </div>
+                    <div class="avatar-node w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-red-800 to-crimson-500 border-2 border-white/80 shadow-xl flex items-center justify-center font-bold text-xs text-white" data-rx="210" data-ry="135">
+                        <span>Toko</span>
+                    </div>
+                </div>
+
+                <!-- Center Text inside Ring -->
+                <div class="relative z-10 max-w-lg mx-auto space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-crimson-600/20 border border-crimson-500/40 text-crimson-300 text-xs font-semibold">
+                        Dipercaya 500+ Mahasiswa &amp; Pebisnis
+                    </span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-white">
+                        Gabung Bersama Klien Sukses Kami
+                    </h2>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Dari tugas koding semalam jadi hingga sistem informasi skala korporat. Konsultasikan ide atau modul tugas Anda sekarang juga.
+                    </p>
+                    <div class="pt-2 flex items-center justify-center gap-3">
+                        <a href="#kontak" onclick="prefillOrder('Gabung Order Prioritas')" class="px-6 py-2.5 rounded-full bg-white text-obsidian-950 hover:bg-crimson-500 hover:text-white font-bold text-xs sm:text-sm transition-all shadow-lg">
+                            Mulai Proyek Sekarang
+                        </a>
+                        <button onclick="toggleAvatarRing()" class="px-4 py-2.5 rounded-full bg-obsidian-900/90 border border-crimson-500/40 text-xs text-crimson-300 hover:text-white">
+                            Putar Animasi Ring
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PART B: Phone Center + Sliding Feature Badges ("Networking Opportunities" in Video 0:11 - 0:12) -->
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Katalog Layanan &amp; Paket Harga</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Layanan Unggulan <span class="text-crimson-500">Siap Pakai</span>
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Klik salah satu kartu layanan di samping layar ponsel untuk melihat detail spesifikasi &amp; memesan.</p>
+            </div>
+
+            <div id="phone-services-showcase" class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-center max-w-6xl mx-auto">
+                
+                <!-- Left Wing: 3 Sliding Service Cards -->
+                <div class="lg:col-span-4 space-y-4 z-20">
+                    <!-- Service 1 -->
+                    <div onclick="openServiceDetail(0)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Website Tugas &amp; Praktikum</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 150.000 • 1-3 Hari</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div onclick="openServiceDetail(1)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Web Skripsi &amp; Tugas Akhir</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 750.000 • Full Bimbingan</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div onclick="openServiceDetail(2)" class="service-wing-left cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Landing Page UMKM &amp; Iklan</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 350.000 • High Conversion</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Phone Mockup (Like "Web3 Summit" QR Phone in Video 0:12) -->
+                <div class="lg:col-span-4 flex justify-center z-10 my-4 lg:my-0">
+                    <div class="w-[260px] sm:w-[280px] rounded-[40px] p-3 bg-gradient-to-b from-crimson-500/40 via-obsidian-800 to-black border-2 border-crimson-500/50 crimson-glow">
+                        <div class="rounded-[30px] bg-obsidian-950 p-5 border border-white/10 space-y-4">
+                            <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                <span>9:41</span>
+                                <span class="px-2 py-0.5 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 font-semibold">KATALOG PRO</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-gradient-to-br from-crimson-900/50 to-obsidian-900 border border-crimson-500/30">
+                                <div class="text-xs font-bold text-white">Pilih Paket JokiWeb</div>
+                                <div class="text-[11px] text-gray-300 mt-1"><i class="fa-solid fa-clock text-crimson-400 mr-1"></i>Pengerjaan Express 24/7</div>
+                                <div class="text-[11px] text-gray-300"><i class="fa-solid fa-shield-halved text-crimson-400 mr-1"></i>Garansi Revisi Sampai ACC</div>
+                            </div>
+
+                            <!-- Interactive QR / Code Visual Box -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-br from-crimson-600 to-crimson-900 text-white text-center space-y-2 shadow-inner">
+                                <i class="fa-solid fa-qrcode text-5xl"></i>
+                                <div class="text-xs font-bold tracking-wider uppercase">Scan / Klik Paket</div>
+                                <p class="text-[10px] text-crimson-100">Klik paket di kiri/kanan untuk detail fitur lengkap</p>
+                            </div>
+
+                            <a href="#kontak" onclick="prefillOrder('Paket Custom Pilihan')" class="block w-full py-2.5 rounded-xl bg-white text-obsidian-950 hover:bg-crimson-500 hover:text-white font-bold text-xs text-center transition-all">
+                                Order Cepat via WA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Wing: 3 Sliding Service Cards -->
+                <div class="lg:col-span-4 space-y-4 z-20">
+                    <!-- Service 4 -->
+                    <div onclick="openServiceDetail(3)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Website Toko Online / E-Commerce</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 850.000 • Payment &amp; Ongkir</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div onclick="openServiceDetail(4)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Custom Sistem Informasi / ERP</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Harga Custom • Multi-Role User</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div onclick="openServiceDetail(5)" class="service-wing-right cursor-pointer p-4 rounded-2xl crimson-border-glow flex items-center justify-between group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-white">Jasa Fix Bug &amp; Slicing Figma</h3>
+                                <p class="text-xs text-crimson-400 font-semibold">Mulai Rp 100.000 • Selesai Kilat</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-lg bg-crimson-600/20 text-crimson-400 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. BLOG: ALTERNATING SPLIT SHOWCASE (Video 0:13 - 0:18) ==================== -->
+    <section id="blog" class="relative py-20 lg:py-28 bg-obsidian-950 border-t border-crimson-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto reveal-up">
+                <span class="px-3.5 py-1 rounded-full bg-crimson-950 border border-crimson-600/40 text-crimson-400 text-xs font-semibold uppercase tracking-wider">Blog &amp; Wawasan Teknis</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-3">
+                    Tips Lulus Sidang &amp; <span class="text-crimson-500">Strategi Website</span>
+                </h2>
+            </div>
+
+            <!-- Blog Row 1: Text Left, Large Rounded Visual Card Right (Like "Study Wherever You Want" in Video 0:13) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Panduan Mahasiswa • 4 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Rahasia Presentasi Web Skripsi Agar Langsung Dapat Nilai A+
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Menggunakan jasa pembuatan website untuk membantu tugas akhir sangatlah wajar, asalkan Anda memahami alur CRUD, struktur tabel database (ERD), dan letak fungsi utama saat diuji dosen.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(0)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                        <a href="#kontak" onclick="prefillOrder('Konsultasi Web Skripsi')" class="px-5 py-3 rounded-2xl bg-obsidian-900 hover:bg-obsidian-800 text-gray-200 border border-white/10 text-xs sm:text-sm font-semibold transition-all">
+                            Tanya Paket Skripsi
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div onclick="openBlogReader(0)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-br from-crimson-800 via-crimson-950 to-obsidian-900 border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="absolute -right-12 -top-12 w-52 h-52 rounded-full bg-crimson-500/20 blur-2xl group-hover:scale-125 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-mono border border-crimson-500/30">skripsi-controller.php</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="my-6 p-4 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs text-gray-300 space-y-1 z-10">
+                            <p><span class="text-crimson-400">public function</span> <span class="text-white">sidangSkripsi</span>() {</p>
+                            <p class="pl-4">return <span class="text-green-400">'Lulus Tanpa RevisiBerat!'</span>;</p>
+                            <p>}</p>
+                        </div>
+                        <div class="z-10 flex items-center justify-between text-xs text-gray-300">
+                            <span>Dilengkapi Video Penjelasan Kode</span>
+                            <span class="font-bold text-white">100% Siap Sidang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Row 2: Large Rounded Visual Card Left, Text Right (Like "Popular Live Streams" in Video 0:15) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div onclick="openBlogReader(1)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-bl from-crimson-700/80 via-obsidian-900 to-black border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-semibold border border-crimson-500/30">Perbandingan Framework 2026</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 my-6 z-10">
+                            <div class="p-4 rounded-2xl bg-black/60 border border-crimson-500/30 text-center">
+                                <i class="fa-brands fa-laravel text-3xl text-red-500 mb-1"></i>
+                                <div class="text-xs font-bold text-white">Laravel</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/60 border border-cyan-500/30 text-center">
+                                <i class="fa-brands fa-react text-3xl text-cyan-400 mb-1"></i>
+                                <div class="text-xs font-bold text-white">React.js</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/60 border border-blue-500/30 text-center">
+                                <i class="fa-brands fa-wordpress text-3xl text-blue-400 mb-1"></i>
+                                <div class="text-xs font-bold text-white">WordPress</div>
+                            </div>
+                        </div>
+                        <div class="z-10 text-xs text-gray-300">
+                            Panduan memilih teknologi terbaik sesuai budget &amp; tujuan Anda.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Arsitektur Web • 5 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Pilih Laravel, React.js, atau WordPress untuk Proyek Anda?
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Jangan salah pilih teknologi! Ketahui kapan Anda harus menggunakan sistem berbasis PHP Laravel yang tangguh untuk database, atau React + Tailwind CSS untuk tampilan super interaktif.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(1)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Row 3: Text Left, Visual Card Right (Like "Customize Your Learning" in Video 0:17) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="px-3 py-1 rounded-full bg-crimson-500/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold">Bisnis &amp; Konversi • 3 Menit Baca</span>
+                    <h3 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
+                        Desain Landing Page Dark Mode &amp; Gradasi Merah yang Menaikkan Omzet
+                    </h3>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Pelajari bagaimana psikologi warna hitam-merah serta penempatan tombol WhatsApp yang tepat dapat meningkatkan penjualan produk UMKM hingga 3x lipat.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="openBlogReader(2)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-crimson-600 to-crimson-800 hover:from-crimson-500 hover:to-crimson-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 crimson-glow transition-all">
+                            <i class="fa-solid fa-book-open"></i> Baca Artikel Lengkap
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div onclick="openBlogReader(2)" class="cursor-pointer rounded-[36px] p-8 bg-gradient-to-tr from-obsidian-900 via-crimson-950 to-crimson-700 border border-crimson-500/40 shadow-2xl relative overflow-hidden group min-h-[340px] flex flex-col justify-between">
+                        <div class="flex items-center justify-between z-10">
+                            <span class="px-3 py-1 rounded-full bg-black/50 text-crimson-300 text-xs font-semibold border border-crimson-500/30">UI/UX Conversion</span>
+                            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-crimson-600 transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="my-6 p-5 rounded-2xl bg-black/65 border border-crimson-500/30 space-y-3 z-10">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Kecepatan Loading</span>
+                                <span class="text-green-400 font-bold">99/100 Google Speed</span>
+                            </div>
+                            <div class="w-full bg-obsidian-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-crimson-500 to-green-400 w-[96%] h-full"></div>
+                            </div>
+                        </div>
+                        <div class="z-10 text-xs text-gray-200 font-medium">
+                            Klik untuk membaca studi kasus konversi halaman web UMKM.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 5. KONTAK & BENTO FOOTER WITH RIBBON SVG (Video 0:19 - 0:20) ==================== -->
+    <section id="kontak" class="relative py-20 lg:py-28 overflow-hidden bg-obsidian-950 border-t border-crimson-900/30">
+        
+        <!-- GIANT GLOWING CRIMSON RIBBON SVG WEAVING BEHIND CARDS (Exact replication of Video 0:19 - 0:20) -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-85" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="crimsonRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7f1d1d" />
+                    <stop offset="50%" stop-color="#ef4444" />
+                    <stop offset="100%" stop-color="#991b1b" />
+                </linearGradient>
+                <filter id="ribbonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="12" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <!-- Background Static Thick Ribbon -->
+            <path d="M-100 580 C 220 580, 260 120, 560 140 C 860 160, 740 600, 1080 580 C 1320 560, 1380 180, 1600 160"
+                  stroke="url(#crimsonRibbonGrad)" stroke-width="58" stroke-linecap="round" opacity="0.28" />
+            <!-- Animated Glowing Core Ribbon -->
+            <path class="ribbon-path-animated"
+                  d="M-100 580 C 220 580, 260 120, 560 140 C 860 160, 740 600, 1080 580 C 1320 560, 1380 180, 1600 160"
+                  stroke="url(#crimsonRibbonGrad)" stroke-width="36" stroke-linecap="round" filter="url(#ribbonGlow)" />
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Top Brand Strip above Footer Bento -->
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-crimson-600 flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="font-display font-bold text-2xl text-white">JokiWeb<span class="text-crimson-500">.id</span></span>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400">Siap melayani pembuatan website &amp; tugas coding 24 jam di seluruh Indonesia.</p>
+            </div>
+
+            <!-- 3-Column Bento Contact Layout (Replicating Video 0:19 - 0:20) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                
+                <!-- Bento Card 1: Order / Consultation Form (5 cols) -->
+                <div class="lg:col-span-5 rounded-[34px] p-7 sm:p-8 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Mulai Konsultasi</span>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mt-1 mb-4">
+                            Pesan Jasa Joki &amp; Website Sekarang
+                        </h3>
+
+                        <form id="joki-order-form" onsubmit="submitOrderForm(event)" class="space-y-3.5">
+                            <div>
+                                <input type="text" id="order-name" required placeholder="Nama Anda / Panggilan *"
+                                       class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-gray-500">
+                            </div>
+                            <div>
+                                <select id="order-service" required
+                                        class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white">
+                                    <option value="Website Tugas Kuliah / Praktikum">Website Tugas Kuliah / Praktikum</option>
+                                    <option value="Website Skripsi / Tugas Akhir">Website Skripsi / Tugas Akhir</option>
+                                    <option value="Landing Page UMKM / Promosi">Landing Page UMKM / Promosi</option>
+                                    <option value="Website Toko Online / E-Commerce">Website Toko Online / E-Commerce</option>
+                                    <option value="Custom Sistem Informasi / Web App">Custom Sistem Informasi / Web App</option>
+                                    <option value="Fix Bug / Slicing Figma">Fix Bug / Slicing Figma</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea id="order-notes" rows="3" required placeholder="Tulis singkat detail tugas/website & deadline Anda..."
+                                          class="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-white/10 focus:border-crimson-500 focus:outline-none text-sm text-white placeholder-gray-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-crimson-600 via-crimson-700 to-crimson-900 hover:from-crimson-500 hover:to-crimson-700 crimson-glow transition-all flex items-center justify-center gap-2">
+                                <span>Kirim &amp; Hubungi WhatsApp</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="pt-5 mt-5 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                        <span>© 2026 JokiWeb.id</span>
+                        <span class="text-crimson-400 font-semibold">Respon Cepat &lt; 5 Menit</span>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2: Contacts Details Card (5 cols - Center Card in Video 0:19) -->
+                <div class="lg:col-span-5 rounded-[34px] p-7 sm:p-8 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-crimson-400">Saluran Resmi</span>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">Kontak Kami</h3>
+                        
+                        <div class="space-y-3 pt-2 text-sm text-gray-300">
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5 flex items-center justify-between">
+                                <div>
+                                    <div class="text-[11px] text-gray-400">Email Pengiriman Modul / Brief</div>
+                                    <div class="font-semibold text-white">admin@jokiweb.id</div>
+                                </div>
+                                <button onclick="copyText('admin@jokiweb.id', 'Email')" class="px-3 py-1 rounded-lg bg-crimson-600/20 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs transition-all">Salin</button>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5 flex items-center justify-between">
+                                <div>
+                                    <div class="text-[11px] text-gray-400">WhatsApp Fast Response (24/7)</div>
+                                    <div class="font-semibold text-white">+62 812-3456-7890</div>
+                                </div>
+                                <button onclick="copyText('+6281234567890', 'Nomor WhatsApp')" class="px-3 py-1 rounded-lg bg-crimson-600/20 text-crimson-300 hover:bg-crimson-600 hover:text-white text-xs transition-all">Salin</button>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-obsidian-950 border border-white/5">
+                                <div class="text-[11px] text-gray-400">Lokasi Studio Operasional</div>
+                                <div class="font-semibold text-white text-xs sm:text-sm mt-0.5">Surabaya, Jawa Timur • Melayani Online Seluruh Indonesia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-5 mt-5 border-t border-white/10 flex items-center gap-6 text-xs text-gray-400">
+                        <span class="hover:text-white cursor-pointer" onclick="showToast('Garansi Revisi & Uang Kembali jika tidak sesuai kesepakatan.')">Garansi Layanan</span>
+                        <span class="hover:text-white cursor-pointer" onclick="showToast('Identitas & kode project Anda dijamin 100% rahasia.')">Kebijakan Privasi</span>
+                    </div>
+                </div>
+
+                <!-- Bento Card 3: Vertical Social Pill Column (2 cols - Right Card in Video 0:19) -->
+                <div class="lg:col-span-2 rounded-[34px] p-5 bg-obsidian-900/95 backdrop-blur-xl border border-crimson-500/40 shadow-2xl flex lg:flex-col items-center justify-around gap-4">
+                    <a href="#kontak" onclick="showToast('Membuka WhatsApp Official JokiWeb.id')" aria-label="WhatsApp" class="w-14 h-14 rounded-full bg-gradient-to-br from-crimson-600 to-crimson-900 text-white hover:scale-110 transition-transform flex items-center justify-center text-2xl crimson-glow">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka Instagram @jokiweb.id')" aria-label="Instagram" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka TikTok @jokiweb.id')" aria-label="TikTok" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#kontak" onclick="showToast('Membuka GitHub Portfolio JokiWeb.id')" aria-label="GitHub" class="w-14 h-14 rounded-full bg-obsidian-950 border border-crimson-500/40 text-white hover:bg-crimson-600 hover:scale-110 transition-all flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== UNIVERSAL MODAL POPUP ==================== -->
+    <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="relative w-full max-w-xl rounded-3xl bg-obsidian-900 border border-crimson-500/50 p-6 sm:p-8 shadow-2xl crimson-glow max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAppModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-obsidian-800 hover:bg-crimson-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="app-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div id="app-toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-crimson-700 to-obsidian-900 text-white border border-crimson-400/50 shadow-2xl">
+        <i class="fa-solid fa-bolt text-yellow-300"></i>
+        <span id="app-toast-text" class="text-xs sm:text-sm font-medium">Notifikasi</span>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ANIMATIONS & INTERACTIONS ==================== -->
+    <script>
+        // 1. HERO CONVERGENCE ANIMATION (Floating Icons Fly Into Smartphone on Scroll or Click)
+        let isHeroConverged = false;
+
+        function applyHeroPositions(converged) {
+            const icons = document.querySelectorAll('.hero-icon-item');
+            const leftCopy = document.getElementById('hero-left-copy');
+            const rightCopy = document.getElementById('hero-right-copy');
+            const dynBg = document.getElementById('hero-dynamic-bg');
+            const phone = document.getElementById('hero-phone');
+            const stateBtn = document.getElementById('hero-state-btn');
+            const isMobile = window.innerWidth < 640;
+            const scaleFactor = isMobile ? 0.55 : 1;
+
+            icons.forEach(icon => {
+                if (converged) {
+                    const px = parseFloat(icon.dataset.phoneX);
+                    const py = parseFloat(icon.dataset.phoneY);
+                    const pr = parseFloat(icon.dataset.phoneR);
+                    const ps = parseFloat(icon.dataset.phoneScale);
+                    icon.style.transform = `translate3d(${px}px, ${py}px, 0) rotate(${pr}deg) scale(${ps})`;
+                } else {
+                    const sx = parseFloat(icon.dataset.scatterX) * scaleFactor;
+                    const sy = parseFloat(icon.dataset.scatterY) * scaleFactor;
+                    const sr = parseFloat(icon.dataset.scatterR);
+                    icon.style.transform = `translate3d(${sx}px, ${sy}px, 0) rotate(${sr}deg) scale(1)`;
+                }
+            });
+
+            if (converged) {
+                leftCopy.classList.remove('opacity-0', '-translate-x-10');
+                leftCopy.classList.add('opacity-100', 'translate-x-0');
+                rightCopy.classList.remove('opacity-0', 'translate-x-10');
+                rightCopy.classList.add('opacity-100', 'translate-x-0');
+                dynBg.style.opacity = '0.95';
+                phone.style.transform = 'translateY(-10px) scale(1.03)';
+                if (stateBtn) stateBtn.textContent = 'Reset Posisi Menyebar';
+            } else {
+                leftCopy.classList.add('opacity-0', '-translate-x-10');
+                leftCopy.classList.remove('opacity-100', 'translate-x-0');
+                rightCopy.classList.add('opacity-0', 'translate-x-10');
+                rightCopy.classList.remove('opacity-100', 'translate-x-0');
+                dynBg.style.opacity = '0.3';
+                phone.style.transform = 'translateY(12px) scale(0.98)';
+                if (stateBtn) stateBtn.textContent = 'Simulasi Animasi Masuk HP';
+            }
+        }
+
+        function toggleHeroConvergence() {
+            isHeroConverged = !isHeroConverged;
+            applyHeroPositions(isHeroConverged);
+        }
+
+        // Phone Glow Mode Switcher (Obsidian vs Crimson Overdrive)
+        function setPhoneGlowMode(mode) {
+            const screen = document.getElementById('phone-inner-screen');
+            const obsBtn = document.getElementById('mode-obsidian-btn');
+            const crimBtn = document.getElementById('mode-crimson-btn');
+
+            if (mode === 'crimson') {
+                screen.className = 'w-full h-full rounded-[34px] bg-gradient-to-b from-crimson-700 via-crimson-950 to-black border border-crimson-400/50 p-5 flex flex-col justify-between relative overflow-hidden transition-colors duration-500';
+                crimBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white flex items-center gap-1.5 transition-all';
+                obsBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold text-gray-400 hover:text-white flex items-center gap-1.5 transition-all';
+                isHeroConverged = true;
+                applyHeroPositions(true);
+            } else {
+                screen.className = 'w-full h-full rounded-[34px] bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-crimson-950/60 border border-white/10 p-5 flex flex-col justify-between relative overflow-hidden transition-colors duration-500';
+                obsBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white flex items-center gap-1.5 transition-all';
+                crimBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold text-gray-400 hover:text-white flex items-center gap-1.5 transition-all';
+            }
+        }
+
+        // 2. AVATAR RING EXPANSION ANIMATION (Video 0:09 - 0:10)
+        let isRingExpanded = false;
+        function updateAvatarRing(expanded) {
+            const nodes = document.querySelectorAll('.avatar-node');
+            const factor = window.innerWidth < 640 ? 0.48 : 1;
+            nodes.forEach((node, idx) => {
+                if (expanded) {
+                    const rx = parseFloat(node.dataset.rx) * factor;
+                    const ry = parseFloat(node.dataset.ry) * factor;
+                    node.style.transform = `translate3d(${rx}px, ${ry}px, 0) scale(1)`;
+                    node.style.opacity = '1';
+                } else {
+                    // Clustered tightly in center initially
+                    const offset = (idx - 2.5) * 14;
+                    node.style.transform = `translate3d(${offset}px, -110px, 0) scale(0.82)`;
+                    node.style.opacity = '0.65';
+                }
+            });
+        }
+
+        function toggleAvatarRing() {
+            isRingExpanded = !isRingExpanded;
+            updateAvatarRing(isRingExpanded);
+        }
+
+        // 3. INTERACTIVE TOPIC PILLS IN BENTO CARD
+        function toggleTopicPill(btn, topicName) {
+            const isSelected = btn.textContent.trim().startsWith('✓');
+            if (isSelected) {
+                btn.textContent = '+ ' + btn.textContent.replace('✓ ', '');
+                btn.className = 'topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-obsidian-950 text-gray-300 border border-white/10 hover:border-crimson-500 transition-all';
+            } else {
+                btn.textContent = '✓ ' + btn.textContent.replace('+ ', '');
+                btn.className = 'topic-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white border border-crimson-400 transition-all';
+                prefillOrder(topicName);
+            }
+        }
+
+        // 4. SERVICE DETAILS & BLOG MODAL DATA
+        const serviceDetails = [
+            {
+                title: 'Website Tugas Kuliah & Praktikum',
+                price: 'Mulai Rp 150.000',
+                badge: 'Selesai 1 - 3 Hari',
+                desc: 'Cocok untuk tugas mingguan, UTS/UAS Pemrograman Web Dasar maupun Lanjut. Bisa menggunakan HTML/CSS/JS murni, Bootstrap, Tailwind, PHP Native, atau Laravel.',
+                perks: ['Source Code Rapi + Komentar Penjelasan', 'Database MySQL Lengkap', 'Bantuan Pasang di XAMPP/Laragon via AnyDesk', 'Garansi Revisi Sesuai Modul Dosen']
+            },
+            {
+                title: 'Website Skripsi & Tugas Akhir',
+                price: 'Mulai Rp 750.000',
+                badge: 'Full Bimbingan Sampai Sidang',
+                desc: 'Pembuatan sistem aplikasi web lengkap untuk Skripsi/TA (Sistem Informasi, SPK metode SAW/AHP/TOPSIS, Klasifikasi, E-Commerce, dll).',
+                perks: ['Gratis Konsultasi Judul & Alur Sistem', 'Bonus Perancangan ERD & Flowchart', 'Garansi Revisi Dosen Pembimbing & Penguji', 'Sesi Rekaman/Zoom Penjelasan Baris Kode']
+            },
+            {
+                title: 'Landing Page UMKM & Promosi Iklan',
+                price: 'Mulai Rp 350.000',
+                badge: 'Desain Premium & Cepat',
+                desc: 'Halaman web promosi dengan animasi modern seperti di TikTok untuk meningkatkan kepercayaan calon pembeli produk atau jasa Anda.',
+                perks: ['Desain Custom Dark/Light Mode', 'Integrasi Tombol Order ke WhatsApp', 'SEO Friendly & Loading Super Cepat', 'Gratis Setup Hosting & Domain']
+            },
+            {
+                title: 'Website Toko Online / E-Commerce',
+                price: 'Mulai Rp 850.000',
+                badge: 'Otomatisasi Bisnis',
+                desc: 'Toko online profesional lengkap dengan katalog produk, keranjang belanja, hitung ongkos kirim kurir Indonesia, dan pembayaran QRIS/Transfer.',
+                perks: ['Dashboard Admin Kelola Produk & Stok', 'Integrasi Midtrans Payment & RajaOngkir', 'Cetak Invoice & Laporan Penjualan', 'Tampilan Mobile-First Seperti Aplikasi']
+            },
+            {
+                title: 'Custom Sistem Informasi / Web App',
+                price: 'Harga Nego Sesuai Fitur',
+                badge: 'Skala Bisnis & Instansi',
+                desc: 'Pengembangan aplikasi web khusus seperti Sistem Kasir (POS), Absensi Geolocation, Manajemen Klinik, atau Sistem Akademik Sekolah.',
+                perks: ['Multi-Role Login (Admin, Staf, User)', 'Export Laporan PDF & Excel', 'Keamanan Data & Backup Rutin', 'Garansi Maintenance 30 Hari']
+            },
+            {
+                title: 'Jasa Fix Bug, Error & Slicing Figma',
+                price: 'Mulai Rp 100.000',
+                badge: 'Pengerjaan Express Kilat',
+                desc: 'Website Anda tiba-tiba error saat mau dikumpulkan? Atau punya desain di Figma yang ingin diubah menjadi kode HTML/Tailwind/React?',
+                perks: ['Pengecekan Error Cepat', 'Slicing Pixel-Perfect & Responsif', 'Penambahan Fitur Baru di Web Lama', 'Bantuan Upload ke Hosting/cPanel/VPS']
+            }
+        ];
+
+        const blogArticles = [
+            {
+                title: 'Rahasia Presentasi Web Skripsi Agar Langsung Dapat Nilai A+',
+                tag: 'Panduan Akademik',
+                body: `
+                    <p class="mb-3">Saat sidang skripsi, dosen penguji biasanya menguji penguasaan Anda terhadap alur program, bukan meminta Anda menghafal seluruh kode dari nol.</p>
+                    <h4 class="font-bold text-white mb-1">1. Kuasai Alur Input hingga Output</h4>
+                    <p class="mb-3">Pahami bagaimana data dari form disimpan ke tabel database dan ditampilkan kembali di halaman laporan.</p>
+                    <h4 class="font-bold text-white mb-1">2. Ketahui Lokasi File Penting (MVC)</h4>
+                    <p>Di JokiWeb.id, setiap pengiriman file selalu disertai panduan letak <em>Routes</em>, <em>Controller</em>, dan <em>View</em> sehingga Anda bisa langsung menjawab jika diminta mengubah teks atau logika sederhana saat sidang.</p>
+                `
+            },
+            {
+                title: 'Pilih Laravel, React.js, atau WordPress untuk Proyek Anda?',
+                tag: 'Arsitektur Teknologi',
+                body: `
+                    <p class="mb-3">Memilih stack teknologi yang tepat akan menghemat biaya dan waktu pengerjaan proyek Anda:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Laravel:</strong> Terbaik untuk sistem informasi akademik, skripsi, dan aplikasi dengan banyak tabel database.</li>
+                        <li><strong>React.js / Tailwind:</strong> Terbaik untuk landing page interaktif beranimasi halus dan aplikasi web modern.</li>
+                        <li><strong>WordPress:</strong> Terbaik untuk company profile instan yang mudah diedit tanpa koding.</li>
+                    </ul>
+                `
+            },
+            {
+                title: 'Desain Landing Page Dark Mode & Gradasi Merah yang Menaikkan Omzet',
+                tag: 'UI/UX & Konversi',
+                body: `
+                    <p class="mb-3">Website dengan perpaduan warna hitam obsidian dan aksen merah menyala menciptakan kontras visual yang kuat di layar smartphone maupun desktop.</p>
+                    <p>Pengunjung langsung tertuju pada tombol pemesanan (Call-to-Action) dan merasakan kesan profesional sejak detik pertama halaman dibuka.</p>
+                `
+            }
+        ];
+
+        function openServiceDetail(index) {
+            const item = serviceDetails[index];
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <span class="px-3 py-1 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 text-xs font-semibold">${item.badge}</span>
+                <h3 class="font-display font-bold text-2xl text-white mt-3">${item.title}</h3>
+                <div class="text-crimson-400 font-bold text-lg mt-1">${item.price}</div>
+                <p class="text-gray-300 text-sm leading-relaxed my-4">${item.desc}</p>
+                <div class="p-4 rounded-2xl bg-obsidian-950 border border-white/10 space-y-2 mb-5">
+                    <div class="text-xs font-bold text-white uppercase tracking-wider">Fasilitas Paket:</div>
+                    ${item.perks.map(p => `<div class="text-xs text-gray-300 flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i><span>${p}</span></div>`).join('')}
+                </div>
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeAppModal()" class="px-5 py-2.5 rounded-xl bg-obsidian-800 text-gray-300 text-xs font-semibold">Tutup</button>
+                    <a href="#kontak" onclick="closeAppModal(); prefillOrder('${item.title}')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-crimson-600 to-crimson-800 text-white text-xs font-bold crimson-glow">Pesan Paket Ini</a>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openBlogReader(index) {
+            const post = blogArticles[index];
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <span class="px-3 py-1 rounded-full bg-crimson-950 text-crimson-400 border border-crimson-500/30 text-xs font-semibold">${post.tag}</span>
+                <h3 class="font-display font-bold text-2xl text-white mt-3 mb-4">${post.title}</h3>
+                <div class="text-gray-300 text-sm leading-relaxed space-y-2 border-t border-white/10 pt-4">${post.body}</div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-xs text-gray-400">Butuh bantuan terkait topik ini?</span>
+                    <a href="#kontak" onclick="closeAppModal(); prefillOrder('Konsultasi Artikel Blog')" class="px-5 py-2.5 rounded-xl bg-crimson-600 text-white text-xs font-bold">Konsultasi Gratis</a>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAppModal() {
+            const modal = document.getElementById('app-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 5. FORM ORDER & CLIPBOARD HELPERS
+        function prefillOrder(serviceText) {
+            const select = document.getElementById('order-service');
+            const notes = document.getElementById('order-notes');
+            if (notes && !notes.value.includes(serviceText)) {
+                notes.value = `Halo Admin JokiWeb.id, saya tertarik dengan layanan: ${serviceText}. `;
+            }
+            showToast(`Layanan "${serviceText}" dipilih!`);
+        }
+
+        function submitOrderForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('order-name').value.trim();
+            const service = document.getElementById('order-service').value;
+            const notes = document.getElementById('order-notes').value.trim();
+
+            const waMessage = `Halo Admin JokiWeb.id!\n\nSaya ingin memesan jasa pembuatan website:\n• Nama: ${name}\n• Layanan: ${service}\n• Detail: ${notes}`;
+            const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(waMessage)}`;
+
+            const body = document.getElementById('app-modal-body');
+            body.innerHTML = `
+                <div class="text-center space-y-4">
+                    <div class="w-14 h-14 rounded-full bg-green-500/20 border border-green-500/40 text-green-400 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white">Pesanan Siap Dikirim!</h3>
+                    <p class="text-xs text-gray-400">Halo <strong>${name}</strong>, klik tombol di bawah untuk langsung melanjutkan obrolan dengan tim developer kami di WhatsApp:</p>
+                    <pre class="p-4 rounded-2xl bg-obsidian-950 border border-white/10 text-left text-xs text-gray-300 whitespace-pre-wrap font-mono">${waMessage}</pre>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-xs flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Buka WhatsApp Sekarang
+                        </a>
+                        <button onclick="copyText(\`${waMessage.replace(/`/g, '')}\`, 'Format Pesanan'); closeAppModal();" class="py-3 px-4 rounded-xl bg-obsidian-800 text-gray-200 text-xs font-semibold">
+                            Salin Pesan
+                        </button>
+                    </div>
+                </div>
+            `;
+            const modal = document.getElementById('app-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function copyText(text, label) {
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(`${label} berhasil disalin!`);
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('app-toast');
+            const text = document.getElementById('app-toast-text');
+            text.textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        // 6. SCROLL LISTENER FOR HERO CONVERGENCE, AVATAR RING & REVEAL ANIMATIONS
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize positions
+            applyHeroPositions(false);
+            updateAvatarRing(false);
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobile-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const mobileIcon = document.getElementById('mobile-icon');
+
+            mobileBtn.addEventListener('click', () => {
+                const hidden = mobileDrawer.classList.contains('hidden');
+                mobileDrawer.classList.toggle('hidden', !hidden);
+                mobileIcon.className = hidden ? 'fa-solid fa-xmark text-lg' : 'fa-solid fa-bars text-lg';
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileDrawer.classList.add('hidden');
+                    mobileIcon.className = 'fa-solid fa-bars text-lg';
+                });
+            });
+
+            // Scroll-driven triggers replicating the TikTok video
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+
+                // 1. Trigger Hero Icons converging into Phone when user scrolls down > 65px
+                if (scrollY > 65 && !isHeroConverged) {
+                    isHeroConverged = true;
+                    applyHeroPositions(true);
+                } else if (scrollY <= 40 && isHeroConverged) {
+                    isHeroConverged = false;
+                    applyHeroPositions(false);
+                }
+
+                // 2. Trigger Avatar Ring Expansion when Layanan section enters viewport
+                const ringSection = document.getElementById('avatar-ring-section');
+                if (ringSection) {
+                    const rect = ringSection.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.72 && rect.bottom > 100) {
+                        if (!isRingExpanded) {
+                            isRingExpanded = true;
+                            updateAvatarRing(true);
+                        }
+                    } else if (isRingExpanded) {
+                        isRingExpanded = false;
+                        updateAvatarRing(false);
+                    }
+                }
+
+                // 3. Reveal-up sections smoothly
+                document.querySelectorAll('.reveal-up').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.88) {
+                        el.classList.add('active');
+                    }
+                });
+            });
+
+            // Trigger initial check
+            setTimeout(() => {
+                document.querySelectorAll('.reveal-up').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 150);
+
+            window.addEventListener('resize', () => {
+                applyHeroPositions(isHeroConverged);
+                updateAvatarRing(isRingExpanded);
+            });
+        });
+    </script>
+</body>
+</html>
